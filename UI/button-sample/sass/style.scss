@@ -1,0 +1,639 @@
+$color-orange1: #f5810e;
+$color-orange2: #fabe00;
+$color-orange2-shadow: darken($color-orange2, 5%);
+$color-gradation: linear-gradient(90deg, $color-orange1 0%, $color-orange2 100%);
+$border1: 2px;
+$border2: 5px;
+$title-space-left: 5px;
+$button-space-y: 8px;
+$button-space-x: 20px;
+$button-height: 47px;
+$button-width: 230px;
+$button-font-size: 14px;
+
+// ブレークポイントのマップ
+@use "sass:map";
+$breakpoints: (
+  sp: "screen and (max-width: 767px)",
+  tb: "screen and (min-width: 768px) and (max-width: 1024px)",
+  pc: "screen and (min-width: 768px)",
+);
+
+// メディアクエリ用のmixin（デフォルトはsp）
+@mixin mq($breakpoint: sp) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+body {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  @include mq(sp) {
+    font-size: 24px;
+  }
+}
+
+.contents {
+  /* 中央寄せの基本形 */
+  width: min(1200px, 100%); /* = 900pxを上限、画面が狭い時は100% */
+  margin: 20px auto;
+  padding: 0 5%; /* 端で潰れないよう少し内側に余白 */
+  box-sizing: border-box;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include mq(pc) {
+    flex-direction: row;
+  }
+}
+
+.titles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  position: relative;
+
+  @include mq(pc) {
+    max-width: 50%;
+  }
+  @include mq(sp) {
+    width: 100%;
+  }
+}
+
+.title1 {
+  padding-left: $title-space-left;
+  border-bottom: $border1 solid $color-orange1;
+}
+
+.title2 {
+  padding-left: $title-space-left;
+  border-bottom: $border1 dotted $color-orange1;
+}
+
+.title3 {
+  padding-left: $title-space-left;
+  background-color: $color-orange1;
+}
+
+.title4 {
+  padding-left: $title-space-left;
+  background-color: $color-orange1;
+  color: white;
+}
+
+.title5 {
+  padding-left: $title-space-left;
+  border-left: $border1 solid $color-orange1;
+}
+
+.title6 {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: $border2;
+    background-color: $color-orange2;
+    position: absolute;
+    left: 0;
+    bottom: 0.2em;
+    z-index: -1;
+  }
+}
+
+.title7 {
+  line-height: 1.6;
+  &-parent {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.title7 .mark {
+  display: inline;
+  background-color: $color-orange2;
+  padding: 0.3em 0.4em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.title8 {
+  padding-left: $title-space-left;
+  /* 吹き出し見出し（見出しパターン8） */
+  /* 調整しやすいようにCSS変数でまとめてます */
+  --pad-x: 24px; /* 左右余白 */
+  --pad-y: 8px; /* 上下余白 */
+  --tail-w: 10px; /* しっぽの横半分（=左右に広がる幅） */
+  --tail-h: 8px; /* しっぽの高さ */
+  --tail-left: 40px; /* 左端からのしっぽ位置（パディング込みにしたければ var(--pad-x) に） */
+
+  position: relative;
+  display: block;
+  width: 100%; /* 親の横幅いっぱい（画像っぽく） */
+  padding: var(--pad-y) var(--pad-x);
+  background: $color-orange2;
+  color: #333;
+  font-weight: 700;
+  line-height: 1.4;
+
+  /* 下向きの三角しっぽ */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* ボックスの下辺に接する */
+    left: var(--tail-left); /* しっぽの水平位置 */
+    border-style: solid;
+    border-width: var(--tail-h) var(--tail-w) 0 var(--tail-w);
+    border-color: $color-orange2 transparent transparent transparent;
+  }
+}
+
+.title9 {
+  padding-left: $title-space-left;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 5px;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $border1;
+    width: 60px;
+    background-color: $color-orange1;
+    z-index: 2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: $border1;
+    width: 100%;
+    background-color: $color-orange2;
+    z-index: 1;
+  }
+}
+
+.title10 {
+  padding-left: $title-space-left;
+  display: inline;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 50%;
+    width: $border1;
+    background-color: $color-orange2;
+  }
+}
+
+.title11 {
+  padding-left: $title-space-left;
+  text-align: center;
+
+  .title11__text {
+    display: inline;
+    position: relative;
+    padding-bottom: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: $border2;
+      background-color: $color-orange2;
+    }
+  }
+}
+
+.title12 {
+  padding-left: $title-space-left;
+  position: relative;
+  display: inline;
+  padding-left: 20px;
+
+  &::after {
+    content: "";
+    background: url("../img/check.png") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.title13 {
+  padding-left: $title-space-left;
+  position: relative;
+  display: inline;
+  padding-right: 20px;
+  margin-right: auto;
+
+  &::after {
+    content: "";
+    background: url("../img/glass.png") no-repeat center;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* 見出しパターン14：左右に斜めスラッシュ */
+.title14 {
+  /* 調整用のカスタムプロパティ */
+  --len: 46px; /* スラッシュの長さ */
+  --thick: 4px; /* スラッシュの太さ */
+  --angle: 30deg; /* 傾き（お好みで） */
+  --gap: clamp(12px, 8vw, 120px); /* コンテンツ端からのオフセット */
+
+  @include mq(sp) {
+    --len: 46px;
+    --thick: 4px;
+    --gap: clamp(40px, 10vw, 200px);
+    --angle: 30deg;
+    padding: 20px calc(var(--len) + var(--gap));
+  }
+
+  position: relative;
+  display: block; /* 画像のように横いっぱいにしたい場合 */
+  width: 100%;
+  text-align: center;
+  padding: 24px calc(var(--len) + var(--gap)); /* 文字に被らない余白を確保 */
+  color: #333;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: var(--thick);
+    height: var(--len);
+    background: $color-orange2;
+    border-radius: 999px; /* 端を丸く */
+    transform-origin: center;
+  }
+
+  /* 左の「 \ 」 */
+  &::before {
+    left: var(--gap);
+    transform: translateY(-50%) rotate(calc(-1 * var(--angle)));
+  }
+
+  /* 右の「 / 」 */
+  &::after {
+    right: var(--gap);
+    transform: translateY(-50%) rotate(var(--angle));
+  }
+
+  /* 文字幅きっちり（親幅いっぱいではなくテキスト幅だけ）にしたいとき */
+  .title14--tight {
+    display: inline-block; /* ほかは同じでOK。スラッシュは文字の左右に寄ります */
+  }
+
+  /* 角度や長さを画面幅で少し弱めたい場合（任意） */
+}
+
+/* 見出しパターン15：左右に横線 */
+.title15 {
+  --line: #f4b400; /* 線の色 */
+  --thick: 3px; /* 線の太さ */
+  --gap: 15px; /* 文字と線の間隔 */
+
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: 100%; /* 親幅いっぱいに */
+  font-weight: 800;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    height: var(--thick);
+    background: var(--line);
+    border-radius: 999px; /* 端を少し丸く */
+    flex: 1 1 auto; /* ここで左右の線を“均等に伸ばす” */
+  }
+}
+
+/* ★線の長さを固定にしたい時（例：160px） */
+.title15--fixed::before,
+.title15--fixed::after {
+  flex: 0 0 160px;
+}
+
+
+// /* ================================
+//   button ボタン
+// ================================ */
+
+
+.buttons {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include mq(pc) {
+    max-width: 50%;
+  }
+  @include mq(sp) {
+    width: 100%;
+  }
+}
+
+/* 共通ボタン：ここに挙動とデフォルト値を集約 */
+.btn {
+  /* 見た目の変数（各バリアントで上書き） */
+  --bg: #{$color-orange2};
+  --fg: #111;
+  --bdc: transparent;
+  --bdw: 0px;
+  --radius: 6px;
+
+  /* 影（同型で重ねるためのパラメータ） */
+  --sh-x: 0px;
+  --sh-y: 0px;
+  --sh-blur: 0px;
+  --sh-spread: 0px;
+  --sh-color: transparent; /* 透明なら=影なし */
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: #{$button-width};
+  height: #{$button-height};
+  padding: #{$button-space-y} #{$button-space-x};
+  margin-left: auto;
+  margin-right: auto;
+  font-size: #{$button-font-size};
+  font-weight: 700;
+  color: var(--fg);
+  background: var(--bg);
+  border: var(--bdw) solid var(--bdc);
+  border-radius: var(--radius);
+  box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  @include mq(sp) {
+    width: 100%;
+  }
+}
+
+/* Hover：2px上げる。影は同型で +2px を積む。影が無い場合は 5% 明るく */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    transform: translateY(-2px);
+    /* 影2段（透明なら見えないのでOK） */
+    box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color), var(--sh-x) calc(var(--sh-y) + 2px) var(--sh-blur) var(--sh-spread) var(--sh-color);
+    /* 影なし=色変化、影あり=後で個別に無効化 */
+    filter: brightness(1.05);
+  }
+}
+
+/* Active：影ゼロ＋元の影量ぶんだけ下げる。
+     影なしは 5% 暗く。影ありは後で個別に暗くしない設定に */
+.btn:active,
+.btn[aria-pressed="true"],
+.btn.is-active {
+  transform: translateY(var(--sh-y));
+  box-shadow: none;
+  filter: brightness(0.95);
+}
+
+/* アクセシビリティ */
+.btn:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--fg) 40%, white);
+  outline-offset: 2px;
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== バリアント（見た目の差分だけ） ========== */
+
+/* 幅だけ小さめ */
+.btn1 {
+  width: 154px;
+}
+
+/* 右矢印 */
+.btn2 {
+  position: relative;
+  padding: 14px 56px 14px 20px;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid #fff;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+  }
+}
+
+/* テキスト左寄せ・左余白あり／矢印はテキスト直後で左向き・縦中央 */
+.btn3 {
+  --arrow-w: 8px; /* 矢印の幅 */
+  --arrow-h: 12px; /* 矢印の高さ */
+  --arrow-color: #fff;
+
+  display: inline-flex;
+  align-items: center; /* 縦中央 */
+  justify-content: flex-start; /* 左寄せ */
+  gap: 0; /* テキストに“くっつける” */
+  text-align: left;
+  border-radius: 24px;
+
+  /* 左に少し余白（必要なら値を調整） */
+  padding-left: $button-space-x;
+  padding-right: $button-space-x;
+  
+
+  p {
+    font-weight: inherit;
+    width: fit-content;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: var(--arrow-w);
+      height: var(--arrow-h);
+      background: var(--arrow-color);
+      /* 左向き三角（▶ の反転） */
+      clip-path: polygon(100% 50%, 0 0, 0 100%);
+      flex: 0 0 var(--arrow-w); /* 伸縮させない */
+      /* “くっつける”ので余白は付けない（必要なら margin-left: 2px 等） */
+      margin-left: 3px;
+    }
+  }
+}
+
+/* 下に太めのオフセット影（影=あり） */
+.btn4 {
+  --sh-y: 3px;
+  --sh-color: #{$color-orange2-shadow};
+}
+/* 影ありは色変化を無効化して“影で表現” */
+@media (hover: hover) and (pointer: fine) {
+  .btn4:hover {
+    filter: none;
+  }
+}
+.btn4:active,
+.btn4[aria-pressed="true"],
+.btn4.is-active {
+  filter: none;
+}
+
+/* 大きめのドロップシャドウ（影=あり） */
+.btn5 {
+  --sh-y: 4px;
+  --sh-blur: 24px;
+  --sh-spread: -8px;
+  --sh-color: rgba(0, 0, 0, 0.22);
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn5:hover {
+    filter: none;
+  }
+}
+.btn5:active,
+.btn5[aria-pressed="true"],
+.btn5.is-active {
+  filter: none;
+}
+
+/* グラデ（影=なし） */
+.btn6 {
+  --bg: #{$color-gradation};
+  --fg: #fff;
+}
+
+/* 親背景が濃色のゴースト（7,8） */
+.button7,
+.button8 {
+  height: 80px;
+  width: 100%;
+  background: $color-orange1;
+  display: flex;
+  align-items: center;
+}
+.btn7,
+.btn8 {
+  background: transparent;
+  color: #fff;
+  --bdw: #{$border1};
+  --bdc: currentColor;
+  width: $button-width;
+  height: $button-height;
+}
+.btn7 {
+  text-align: left;
+  padding-left: 20px;
+}
+.btn8 {
+  text-align: center;
+  padding-left: 20px;
+  position: relative;
+  display: inline;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 50px;
+    height: #{$border1};
+    background-color: currentColor;
+  }
+}
+
+/* 円形 */
+.btn9 {
+  width: 124px;
+  height: 124px;
+  min-width: 124px;
+  border-radius: 50%;
+  padding: 0;
+  /* 影は別系統（ここでは“影なし”扱いにしておく） */
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.13);
+}
+
+/* 2つ並び（SPでは縦並び） */
+.button10 {
+  display: flex;
+  gap: 10px;
+  @include mq(sp) {
+    flex-direction: column;
+  }
+}
+
+/* 下に3pxのオフセット影（影=あり） */
+.btn10 {
+  width: 200px;
+  --sh-y: 3px;
+  --sh-color: #{$color-orange2-shadow};
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn10:hover {
+    filter: none;
+  }
+}
+.btn10:active,
+.btn10[aria-pressed="true"],
+.btn10.is-active {
+  filter: none;
+}
+
+/* 色違い：緑（影色も“緑の5%暗め”に修正） */
+.is-green {
+  --bg: #{green};
+  --fg: #fff;
+  --sh-color: #{darken(green, 5%)};
+}

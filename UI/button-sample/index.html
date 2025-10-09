@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 本番環境では消す　検索結果に出てこないようにする設定 -->
+    <meta name="robots" content="noindex" />
+    <!-- ここまで消す -->
+    <title>button</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>見出しとボタンのサンプル</h1>
+    <div class="contents">
+      <div class="titles">
+        <h2 class="title1">見出しパターン１</h2>
+        <h2 class="title2">見出しパターン２</h2>
+        <h2 class="title3">見出しパターン３</h2>
+        <h2 class="title4">見出しパターン４</h2>
+        <h2 class="title5">見出しパターン５</h2>
+        <h2 class="title6">見出しパターン６</h2>
+        <div class="title7-parent">
+          <h2 class="title7"><span class="mark">見出しパターン7</span></h2>
+          <h2 class="title7">
+            <span class="mark">見出しパターン7</span><br /><span class="mark">を改行した時</span>
+          </h2>
+        </div>
+
+        <h2 class="title8">見出しパターン８</h2>
+        <h2 class="title9">見出しパターン９</h2>
+        <h2 class="title10">見出しパターン１０</h2>
+        <h2 class="title11"><span class="title11__text">見出しパターン１１</span></h2>
+        <h2 class="title12">見出しパターン１２</h2>
+        <h2 class="title13">見出しパターン１３</h2>
+        <h2 class="title14">見出しパターン１４</h2>
+        <h2 class="title15">見出しパターン１５</h2>
+      </div>
+      <div class="buttons">
+        <button class="btn btn1">ボタンはこちら１</button>
+        <button class="btn btn2">ボタンはこちら２</button>
+        <button class="btn btn3"><p>ボタンはこちら３</p></button>
+        <button class="btn btn4">ボタンはこちら４</button>
+        <button class="btn btn5">ボタンはこちら５</button>
+        <button class="btn btn6">ボタンはこちら６</button>
+        <div class="button7"><button class="btn btn7">ボタンはこちら７</button></div>
+        <div class="button8"><button class="btn btn8">ボタンはこちら8</button></div>
+        <button class="btn btn9">ボタンは<br>こちら９</button>
+        <div class="button10">
+            <button class="btn btn10">ボタンはこちら１０</button>
+            <button class="btn btn10 is-green">ボタンはこちら１０</button>
+        </div>
+
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="./js/script.js" defer></script>
+  </body>
+</html>

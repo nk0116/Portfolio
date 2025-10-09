@@ -1,0 +1,561 @@
+@use "color";
+@use "breakpoints";
+
+$img-box-shadow: 0 4px 15px 0 rgba(color.$black, 0.15);
+
+body {
+  font-family: "Oswald", "Noto Sans JP", sans-serif;
+  color: color.$cl-black;
+
+  &.is-fixed {
+    overflow: hidden;
+  }
+}
+
+// 遷移先の調整
+#service,
+#works,
+#about,
+#flow,
+#message {
+  @include breakpoints.mq(sp) {
+    // スマホのときだけ
+    scroll-margin-top: 88px; // スクロールするときにヘッダー分調整
+  }
+}
+
+.section {
+  @include breakpoints.mq(pc) {
+    .section__inner {
+      max-width: calc(880px + 32px * 2);
+      margin: 0 auto;
+    }
+
+    .section__head {
+      margin-bottom: 24px;
+    }
+
+    .section__head-main {
+      font-size: 60px;
+    }
+  }
+}
+
+// button
+.button {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px 6px 30px;
+  width: 160px;
+  margin: 0 auto;
+
+  @include breakpoints.mq(pc) {
+    transition: background 0.3s, color 0.3s, opacity 0.3s;
+  }
+
+  &:hover {
+    @include breakpoints.mq(pc) {
+      background-color: color.$white;
+
+      .button__icon-path {
+        fill: #1DA1F2;
+      }
+
+      .button__text {
+        color: color.$bg-dark;
+      }
+    }
+  }
+
+  .button__icon {
+    display: flex;
+    width: 24px;
+    align-items: center;
+  }
+
+  .button__icon-path {
+    fill: color.$white;
+  }
+
+  .button__text {
+    margin-left: 10px;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    color: color.$white;
+    white-space: nowrap; // 改行させない
+  }
+  .button__icon-path--contact {
+    fill: color.$bg-dark;
+  }
+}
+
+.button--bg {
+  background-color: color.$white;
+
+  @include breakpoints.mq(pc) {
+    color: color.$bg-dark;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .button__text {
+    color: color.$bg-dark;
+  }
+
+  .button__icon-path--contact {
+    fill: color.$bg-dark;
+  }
+}
+
+.button--border {
+  border: 1px solid color.$white;
+  .button__text {
+    color: color.$white;
+  }
+}
+
+// header
+.header {
+  background-color: color.$bg-dark;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow-y: auto;
+
+  @include breakpoints.mq(pc-lg) {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    flex-basis: 20.8%;
+    padding: 50px 5px;
+    overflow-y: auto;
+  }
+
+  &__container {
+    position: relative;
+    @include breakpoints.mq(pc-lg) {
+      width: 160px;
+      margin: 0 auto;
+      position: sticky;
+      top: 50px;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    padding: 14px 24px;
+    font-size: 20px;
+    color: color.$white;
+
+    @include breakpoints.mq(pc-lg) {
+      font-size: 30px;
+      letter-spacing: 0.12em;
+      line-height: 1;
+    }
+  }
+
+  &__menu-button {
+    border: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 30px;
+    height: 36px;
+    overflow: hidden;
+    color: transparent;
+    background: url("../img/bg_menu.png") center center no-repeat;
+    background-size: 100% auto;
+    @include breakpoints.mq(pc-lg) {
+      display: none;
+    }
+
+    &.is-checked {
+      background: url("../img/bg_menu-close.png") center center no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  &__nav-item {
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  .header__contents {
+    display: none;
+    height: calc(100vh - 88px);
+    border-top: 1px solid color.$white;
+    padding-top: 60px;
+
+    @include breakpoints.mq(pc-lg) {
+      display: block;
+      border: none;
+    }
+  }
+}
+
+// main
+.main {
+  @include breakpoints.mq(pc) {
+    flex-basis: 79.2%;
+  }
+  @include breakpoints.mq(tb) {
+    flex-basis: 100%;
+  }
+}
+
+// fv
+.fv {
+  position: relative;
+
+  .fv__contents {
+    position: absolute;
+    bottom: 26px;
+    left: 0;
+    width: 100%;
+    height: 209px;
+    background: url("../img/sp/bg_fv.png") center center no-repeat;
+    background-size: 100% auto;
+    padding: 32px;
+
+    @include breakpoints.mq(pc) {
+      background: url(../img/bg_fv.png) center center no-repeat;
+      background-size: 100% auto;
+      bottom: 100px;
+      left: 0;
+      max-width: 627px;
+      height: 174px;
+      padding-top: 24px;
+      padding-left: 96px;
+    }
+
+    @include breakpoints.mq(tb) {
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+
+  .fv__heading {
+    .fv__heading-main {
+      display: block;
+      font-size: 40px;
+      letter-spacing: 0.1em;
+    }
+    .fv__heading-sub {
+      margin: 12px;
+      display: block;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+// section
+.section {
+  padding: 48px 0;
+  .section__inner {
+    padding: 0 32px;
+  }
+  .section__head {
+    // 中身を縦並びにする
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+    .section__head-main {
+      // display: block;
+      font-size: 40px;
+      letter-spacing: 0.1em;
+      @include breakpoints.mq(pc) {
+        font-size: 54px;
+      }
+    }
+    .section__head-sub {
+      // display: block;
+      font-size: 11px;
+    }
+  }
+
+  .section__head--center {
+    text-align: center;
+  }
+
+  .section__contents {
+    margin-top: 40px;
+  }
+
+  .section__lead-text {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+}
+
+// service
+.service {
+  .service__list {
+    @include breakpoints.mq(pc) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8%;
+    }
+  }
+
+  .service__item {
+    .service__item-image {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .service__item-name {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  .service__item + .about {
+    margin-top: 40px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 0;
+    }
+  }
+
+  .service__item-text {
+    line-height: 1.6;
+  }
+}
+
+// works
+.works {
+  background-color: color.$bg-light;
+
+  @include breakpoints.mq(pc) {
+    .works__list {
+      display: grid;
+      // ３個以上で改行
+      grid-template-columns: repeat(3, minmax(150px, 1fr));
+      gap: 8%;
+    }
+  }
+  //.works__itemの中では機能しなかったためここに記載
+  .works__item + .works__item {
+    margin-top: 40px;
+    @include breakpoints.mq(pc) {
+      margin-top: 0;
+    }
+  }
+
+  .works__item {
+    .works__item-link-area {
+      &:hover {
+        .works__item-image {
+          overflow: hidden;
+          img {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    .works__item-image {
+      text-align: center;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      
+
+      img {
+        box-shadow: $img-box-shadow;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2; /* 例: 幅3に対して高さ2 */
+        object-fit: cover; /* 画像がはみ出してもトリミングされる */
+        transition: transform 0.5s;
+      }
+    }
+
+    .works__item-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      white-space: nowrap;
+    }
+
+    .works__item-link {
+      text-decoration: underline;
+      font-size: 14px;
+    }
+  }
+}
+
+// about
+.about {
+  .about__text + .about__text {
+    margin-top: 1em;
+  }
+
+  .section__head-main {
+    margin-top: 20px;
+  }
+  .about__img {
+    margin-bottom: 32px;
+    img {
+      box-shadow: $img-box-shadow;
+    }
+  }
+  @include breakpoints.mq(pc) {
+    .about__container {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+  }
+}
+
+// flow
+.flow {
+  background-color: color.$bg-light;
+
+  .flow__lead {
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  .flow__contents {
+    border: 1px solid color.$cl-border;
+    padding: 46px 16px 24px;
+    position: relative;
+
+    .flow__item-num {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: color.$bg-dark;
+      color: color.$white;
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+      line-height: 1;
+
+      //   線に重ねる
+      position: absolute;
+      top: -24px; // 半分外に出す（48pxの半分）
+      left: 50%; // 真ん中に寄せる（要素のサイズ無視）
+      transform: translateX(-50%); // 要素のサイズの半分左にずらす
+    }
+  }
+  .flow__contents + .flow__contents {
+    margin-top: 46px;
+
+    @include breakpoints.mq(pc) {
+      margin-top: 0;
+    }
+  }
+
+  .flow__list {
+    margin-top: 64px;
+
+    @include breakpoints.mq(pc) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @include breakpoints.mq(tb) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 16px;
+    }
+  }
+
+  .flow__num-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .flow__img {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .flow__head {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .flow__text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+// message
+.message {
+  .message__img {
+    margin-bottom: 32px;
+    img {
+      box-shadow: $img-box-shadow;
+    }
+  }
+
+  .message__text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  @include breakpoints.mq(pc) {
+    .message__container {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+  }
+}
+
+//page-bottom
+.page-bottom {
+  padding: 0;
+  color: color.$white;
+  .page-bottom__item {
+    padding: 40px;
+  }
+  .page-bottom__item--contact {
+    background-color: color.$bg-gray-l;
+  }
+
+  .page-bottom__item-twitter {
+    background-color: color.$bg-dark;
+  }
+  @include breakpoints.mq(pc) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .page-bottom__item {
+      padding: 54px 10px;
+    }
+  }
+}
+
+// footer
+.footer {
+  text-align: center;
+  padding: 10px;
+
+  .footer__copy {
+    font-family: "Noto Sans JP", sans-serif;
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
+/*-----------------------------------
+// pc
+-----------------------------------*/
+@include breakpoints.mq(pc) {
+  .wrapper {
+    display: flex;
+  }
+}
