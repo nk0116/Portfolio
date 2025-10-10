@@ -1,3 +1,4 @@
+// 他社サービスとの違いのスクロールバーの制御
 (() => {
   console.log("[scrollbar] init");
 
@@ -151,12 +152,13 @@ $(function () {
   const $btn = $(".js-form-submit");
 
   function validate() {
+    // 必須項目をリストアップ
     const nameFilled = $.trim($("#your-name").val()) !== "";
     const emailFilled = $.trim($("#your-email").val()) !== "";
     const radioChecked = $form.find('input[name="inquiry_type"]:checked').length > 0;
     const msgFilled = $.trim($("#your-message").val()) !== "";
     const agreed = $("#privacy_agreement").is(":checked");
-
+    //すべての必須項目に入力されているかどうかをチェック
     const isAllFilled = nameFilled && emailFilled && radioChecked && msgFilled && agreed;
 
     if (isAllFilled) {
