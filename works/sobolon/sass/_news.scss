@@ -1,0 +1,92 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.news {
+}
+
+.news__inner {
+  max-width: 1040px;
+  @include mq(pc) {
+    padding: 0;
+  }
+  @include mq(tb) {
+    padding: 0 15px;
+  }
+}
+
+.news__container {
+}
+
+.news__list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding-bottom: 42px;
+  @include mq(pc) {
+    padding-bottom: 44px;
+    gap: 22px;
+  }
+}
+
+.news__item {
+}
+
+.news-link {
+  border-bottom: 1px solid $color-news-border;
+  display: flex;
+  flex-direction: column;
+
+  @include mq(pc) {
+    flex-direction: row;
+    column-gap: 40px;
+    row-gap: 24px;
+    padding-bottom: 24px;
+  }
+  img {
+    transition: transform 0.5s ease;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.news-link-img {
+  overflow: hidden;
+  height: fit-content;
+  @include mq(pc) {
+    max-width: 260px;
+  }
+}
+
+.news-text-date {
+  margin-top: 17px;
+  font-size: 14px;
+
+  @include mq(pc) {
+    margin-top: 0;
+  }
+}
+
+.news-text-title {
+  margin-top: 10px;
+  font-weight: 600;
+
+  @include mq(pc) {
+    margin-top: 18px;
+    font-size: 18px;
+  }
+}
+
+.news-text-discription {
+  margin-top: 14px;
+  color: $color-news-text;
+  font-size: 14px;
+  padding-bottom: 28px;
+
+  @include mq(pc) {
+    margin-top: 10px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,65 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.fv {
+}
+
+.fv__inner {
+  position: relative;
+}
+
+.fv__container {
+  width: 100%;
+  @include mq(pc) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.fv__image {
+  width: 100%;
+  @include mq(pc) {
+    z-index: 1;
+    text-align: right;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.fv__picture {
+  max-width: 100%;
+  @include mq(pc) {
+    display: block;
+    text-align: right;
+  }
+}
+
+.fv__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @include mq(sp) {
+    margin-top: 30px;
+  }
+  @include mq(pc) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+    padding: 80px 40px;
+    background-color: $color-white;
+    z-index: 2;
+  }
+}
+
+.fv__text-title {
+  font-size: 26px;
+  font-weight: 600;
+
+  margin-left: -1px;
+}
+
+.fv__text-description {
+  /* 27.2px */
+}

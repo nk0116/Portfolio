@@ -1,0 +1,58 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.brand-message {
+  position: relative;
+  background: url(../img/brand-message-sp.png) no-repeat center center / cover;
+
+  @include mq(pc) {
+    background: url(../img/brand-message-pc.png) no-repeat center center / cover;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.12);
+  }
+}
+
+.brand-message__inner {
+}
+
+.brand-message__container {
+  padding-top: 180px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include mq(pc) {
+    padding-top: 123px;
+    padding-bottom: 122px;
+  }
+}
+
+.brand-message-title {
+  color: $color-white;
+  font-size: 20px;
+  font-weight: 600;
+
+  z-index: 10;
+  @include mq(pc) {
+    font-size: 22px;
+  }
+}
+
+.brand-message-text {
+  color: $color-white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.72;
+  z-index: 10;
+  @include mq(pc) {
+    font-size: 16px;
+  }
+}

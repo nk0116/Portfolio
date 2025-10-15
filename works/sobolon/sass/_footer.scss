@@ -1,0 +1,75 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.footer {
+  text-align: center;
+}
+
+.footer__logo {
+  margin-bottom: 22px;
+  img {
+    width: 120px;
+    height: 22px;
+  }
+}
+
+.footer__container {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mq(pc) {
+    margin-bottom: 24px;
+  }
+}
+
+.footer__links {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @include mq(pc) {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+.footer__link {
+  text-align: center;
+  font-size: 12px;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.footer__sns {
+  display: flex;
+  gap: 40px;
+}
+
+.footer__sns-link {
+  width: 21px;
+}
+
+.footer__sns-link-twitter {
+  width: 21px;
+}
+
+.footer__sns-link-instagram {
+  width: 18px;
+}
+
+.footer__sns-link-line {
+  width: 18px;
+}
+
+.footer__copyright {
+  color: $color-copyright;
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 10px;
+  @include mq(pc) {
+    padding-bottom: 18px;
+  }
+}

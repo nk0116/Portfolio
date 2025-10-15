@@ -1,0 +1,109 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+html {
+}
+
+body {
+  padding-top: 60px;
+  color: $color-text;
+  font-family: "Noto Serif JP", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.7;
+  @include mq(pc) {
+    padding-top: 70px;
+  }
+}
+
+.section {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 96px;
+  max-width: 100%;
+  @include mq(pc) {
+    margin-bottom: 160px;
+  }
+}
+
+.inner {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+  height: 100%;
+  max-width: 100%;
+  @include mq(sp-lg) {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  @include mq(pc) {
+    max-width: calc($inner-width-pc + 20px * 2);
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.hidden-pc {
+  @include mq(pc) {
+    display: none;
+  }
+}
+
+.hidden-sp {
+  @include mq(sp) {
+    display: none;
+  }
+}
+
+.heading {
+  padding-bottom: 28px;
+  margin-bottom: 46px;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 95%;
+
+  @include mq(pc) {
+    font-size: 40px;
+    line-height: 1;
+    padding-bottom: 24px;
+    margin-bottom: 64px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 60px;
+    background-color: $color-main;
+  }
+}
+
+.btn {
+  display: flex;
+  width: 158px;
+  padding: 11px 4px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid currentColor;
+  background: $color-white;
+  margin: 0 auto;
+  color: $color-main;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+  @include mq(pc) {
+    &:hover {
+      color: $color-white;
+      background-color: $color-main;
+      .btn-link {
+        color: $color-white;
+      }
+    }
+  }
+}

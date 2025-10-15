@@ -1,0 +1,17 @@
+@use "./reset.scss" as *;
+@use "./base.scss" as *;
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+@use "./header.scss" as *;
+@use "./fv.scss" as *;
+@use "./concept.scss" as *;
+@use "./feature.scss" as *;
+@use "./brand-message.scss" as *;
+@use "./products.scss" as *;
+@use "./news.scss" as *;
+@use "./slogan.scss" as *;
+@use "./contact.scss" as *;
+@use "./footer.scss" as *;
+
+// * { outline: 2px solid red; }
