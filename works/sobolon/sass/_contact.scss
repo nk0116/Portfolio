@@ -1,0 +1,236 @@
+@use "./mixins.scss" as *;
+@use "./variables.scss" as *;
+
+.contact {
+  padding-bottom: 56px;
+  margin-bottom: 35px;
+  background: url(../img/contact-bg-sp.png) no-repeat center center / cover;
+  @include mq(pc) {
+    background: url(../img/contact-bg-pc.png) no-repeat center center / cover;
+    padding-bottom: 79px;
+  }
+}
+
+.contact__inner {
+}
+
+.heading--contact {
+  padding-top: 58px;
+  margin-bottom: 47px;
+  color: $color-main;
+  @include mq(pc) {
+    padding-top: 80px;
+    margin-bottom: 66px;
+  }
+}
+
+.contact__container {
+  max-width: 510px;
+  margin: 0 auto;
+}
+
+.contact__notice {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  @include mq(pc) {
+    margin-bottom: 19px;
+  }
+}
+
+.must {
+  color: $color-must;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact__form {
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.input-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  @include mq(pc) {
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.form-text {
+  display: flex;
+  padding: 4px 16px;
+  flex-direction: row;
+  align-items: flex-start;
+  opacity: 0.7;
+  background: $color-main;
+  width: fit-content;
+  color: $color-white;
+  font-size: 14px;
+  font-weight: 600;
+  @include mq(pc) {
+    background: url(../img/label-bg.png) no-repeat center center / cover;
+    fill: $color-main;
+    opacity: 1;
+    width: 180px;
+    height: 40px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
+
+.is-must {
+  color: $color-must;
+  font-size: 10px;
+  font-weight: 600;
+  padding-left: 4px;
+  @include mq(pc) {
+    font-size: 14px;
+  }
+}
+
+.form-input-text {
+  height: 40px;
+  background: var(--ffffff, #fff);
+  box-shadow: 5px 6px 16px 0 rgba(96, 96, 96, 0.16);
+  border: none;
+  @include mq(pc) {
+    width: 100%;
+  }
+}
+
+.input-list-radio {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.form-input-radio {
+  display: flex;
+  padding: 7px calc(24px - 1px) 6px calc(24px - 1px);
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  background: $color-white;
+  color: $color-main;
+  width: fit-content;
+}
+
+input[type="radio"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+  overflow: hidden;
+  &:checked + label {
+    background: $color-main;
+    color: $color-white;
+  }
+
+  &:focus + label {
+    background: $color-main;
+    color: $color-white;
+  }
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid $color-main;
+}
+
+.form-input-textarea {
+  border: none;
+  height: 122px;
+  @include mq(pc) {
+    width: 100%;
+  }
+}
+
+.form-input-checkbox {
+  margin-left: 1px;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 1px solid $color-main;
+  background-color: $color-white;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    mask-image: url(../img/check.png);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: $color-main;
+    opacity: 0;
+  }
+
+  &:checked {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.form-input-checkbox-label {
+  margin-left: -1px;
+}
+
+.privacy-policy {
+  display: flex;
+  gap: 8px;
+  width: fit-content;
+  height: fit-content;
+  margin: -6px auto -10px;
+  @include mq(pc) {
+    margin-top: -3px;
+  }
+}
+
+.privacy-policy-link {
+  color: $color-main;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.5s ease;
+  line-height: 1;
+  display: inline-block;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.js-form-submit {
+  padding: 11px 23px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02px;
+  @include mq(pc) {
+    margin-top: 22px;
+  }
+
+  &[disabled],
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

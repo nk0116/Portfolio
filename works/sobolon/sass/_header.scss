@@ -1,0 +1,180 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  height: 60px;
+  background: $color-white;
+
+  @include mq(pc) {
+    height: 70px;
+    padding: 0 20px;
+  }
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 120px;
+  flex-shrink: 0;
+  padding-top: 13px;
+  padding-bottom: 19px;
+  transition: opacity 0.5s ease;
+  &:hover {
+    opacity: 0.6;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.header__contents {
+  display: none;
+  @include mq(pc) {
+    display: flex;
+  }
+}
+
+.header__menu {
+  display: flex;
+  gap: 47px;
+  justify-content: end;
+  align-items: center;
+}
+
+.header__link {
+  @include mq(pc) {
+    &:hover {
+      color: $color-main;
+    }
+  }
+}
+
+/* ================================
+  ドロワーメニュー
+================================ */
+/* 背景固定用 */
+body.is-fixed {
+  overflow: hidden;
+}
+
+/* ハンバーガー → × アニメの滑らかさ強化 */
+.drawer-icon {
+  width: 36px;
+  height: 21px;
+  position: fixed;
+  z-index: 51;
+  top: 21px;
+  right: 9px;
+
+  @include mq(pc) {
+    display: none;
+  }
+  .drawer-icon__bar {
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 6px;
+    background: $color-main;
+    transition: transform 0.25s ease, top 0.25s ease, opacity 0.2s ease;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 8px;
+    }
+    &:nth-of-type(3) {
+      top: 16px;
+    }
+  }
+  &.is-checked .drawer-icon__bar {
+    &:nth-of-type(1) {
+      top: 9px;
+      transform: rotate(45deg);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      top: 9px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+/* ドロワー本体：スライド＋わずかにバウンド感 */
+.drawer-content {
+  width: 270px;
+  height: 100%;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  z-index: 50;
+  background: $color-main;
+  padding: 34px 16px 40px;
+
+  transform: translateX(100%);
+  transition: transform 0.32s ease;
+  will-change: transform;
+
+  &.is-checked {
+    transform: translateX(0);
+  }
+}
+
+/* 中のリンクを段階的にフェードイン＆スライドアップ */
+.drawer-content__link {
+  transform: translateY(8px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+  &.is-checked .drawer-content__menu > * {
+    transform: translateY(0);
+  }
+  &.is-checked .drawer-content__menu > *:nth-child(1) {
+    transition-delay: 0.06s;
+  }
+  &.is-checked .drawer-content__menu > *:nth-child(2) {
+    transition-delay: 0.12s;
+  }
+  &.is-checked .drawer-content__menu > *:nth-child(3) {
+    transition-delay: 0.18s;
+  }
+  &.is-checked .drawer-content__menu > *:nth-child(4) {
+    transition-delay: 0.24s;
+  }
+}
+
+.drawer-content__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  text-align: right;
+}
+
+/* 既存のリンク見た目はそのまま */
+.drawer-content__link {
+  display: block;
+  padding: 0;
+  text-align: right;
+  font-weight: 700;
+  letter-spacing: 0.48px;
+  color: $color-white;
+}
+
+/* アクセシビリティ：動きを抑える */
+@media (prefers-reduced-motion: reduce) {
+  .drawer-icon .drawer-icon__bar,
+  .drawer-content,
+  .drawer-content__menu > * {
+    transition: none !important;
+  }
+}
