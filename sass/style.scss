@@ -3,6 +3,10 @@
 
 $img-box-shadow: 0 4px 15px 0 rgba(color.$black, 0.15);
 
+// html {
+//   scroll-behavior: smooth;
+// }
+
 body {
   font-family: "Oswald", "Noto Sans JP", sans-serif;
   color: color.$cl-black;
@@ -58,7 +62,11 @@ body {
       background-color: color.$white;
 
       .button__icon-path {
-        fill: #1DA1F2;
+        fill: color.$bg-dark;
+      }
+
+      .twitter-icon {
+        fill: color.$cl-twitter;
       }
 
       .button__text {
@@ -364,7 +372,6 @@ body {
       max-width: 100%;
       height: auto;
       margin-bottom: 12px;
-      
 
       img {
         box-shadow: $img-box-shadow;

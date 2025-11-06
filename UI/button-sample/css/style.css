@@ -20,22 +20,38 @@ h1 {
   width: min(1200px, 100%); /* = 900pxを上限、画面が狭い時は100% */
   margin: 20px auto;
   padding: 0 5%; /* 端で潰れないよう少し内側に余白 */
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 40px;
 }
 @media screen and (min-width: 768px) {
   .contents {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 .titles {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 15px;
   position: relative;
 }
@@ -79,6 +95,7 @@ h1 {
 .title6 {
   display: inline-block;
   position: relative;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -98,6 +115,8 @@ h1 {
   line-height: 1.6;
 }
 .title7-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
@@ -175,7 +194,8 @@ h1 {
   content: "";
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   left: 0;
   height: 50%;
   width: 2px;
@@ -196,7 +216,8 @@ h1 {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   width: 40%;
   height: 5px;
   background-color: #fabe00;
@@ -215,7 +236,8 @@ h1 {
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 18px;
   height: 18px;
 }
@@ -234,7 +256,8 @@ h1 {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 18px;
   height: 18px;
 }
@@ -277,15 +300,18 @@ h1 {
   height: var(--len);
   background: #fabe00;
   border-radius: 999px; /* 端を丸く */
-  transform-origin: center;
+  -webkit-transform-origin: center;
+          transform-origin: center;
 }
 .title14::before {
   left: var(--gap);
-  transform: translateY(-50%) rotate(calc(-1 * var(--angle)));
+  -webkit-transform: translateY(-50%) rotate(calc(-1 * var(--angle)));
+          transform: translateY(-50%) rotate(calc(-1 * var(--angle)));
 }
 .title14::after {
   right: var(--gap);
-  transform: translateY(-50%) rotate(var(--angle));
+  -webkit-transform: translateY(-50%) rotate(var(--angle));
+          transform: translateY(-50%) rotate(var(--angle));
 }
 .title14 .title14--tight {
   display: inline-block; /* ほかは同じでOK。スラッシュは文字の左右に寄ります */
@@ -296,8 +322,12 @@ h1 {
   --line: #f4b400; /* 線の色 */
   --thick: 3px; /* 線の太さ */
   --gap: 15px; /* 文字と線の間隔 */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: var(--gap);
   width: 100%; /* 親幅いっぱいに */
   font-weight: 800;
@@ -308,20 +338,31 @@ h1 {
   height: var(--thick);
   background: var(--line);
   border-radius: 999px; /* 端を少し丸く */
-  flex: 1 1 auto; /* ここで左右の線を“均等に伸ばす” */
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; /* ここで左右の線を“均等に伸ばす” */
 }
 
 /* ★線の長さを固定にしたい時（例：160px） */
 .title15--fixed::before,
 .title15--fixed::after {
-  flex: 0 0 160px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 160px;
+          flex: 0 0 160px;
 }
 
 .buttons {
   text-align: center;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 20px;
 }
 @media screen and (min-width: 768px) {
@@ -349,9 +390,15 @@ h1 {
   --sh-blur: 0px;
   --sh-spread: 0px;
   --sh-color: transparent; /* 透明なら=影なし */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0.5em;
   width: 230px;
   height: 47px;
@@ -364,12 +411,17 @@ h1 {
   background: var(--bg);
   border: var(--bdw) solid var(--bdc);
   border-radius: var(--radius);
-  box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color);
+  -webkit-box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color);
+          box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
+      -ms-user-select: none;
           user-select: none;
+  -webkit-transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, -webkit-transform 0.15s ease, -webkit-box-shadow 0.15s ease, -webkit-filter 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, -webkit-transform 0.15s ease, -webkit-box-shadow 0.15s ease, -webkit-filter 0.15s ease;
   transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, -webkit-transform 0.15s ease, -webkit-box-shadow 0.15s ease, -webkit-filter 0.15s ease;
 }
 @media screen and (max-width: 767px) {
   .btn {
@@ -380,11 +432,14 @@ h1 {
 /* Hover：2px上げる。影は同型で +2px を積む。影が無い場合は 5% 明るく */
 @media (hover: hover) and (pointer: fine) {
   .btn:hover {
-    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
     /* 影2段（透明なら見えないのでOK） */
-    box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color), var(--sh-x) calc(var(--sh-y) + 2px) var(--sh-blur) var(--sh-spread) var(--sh-color);
+    -webkit-box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color), var(--sh-x) calc(var(--sh-y) + 2px) var(--sh-blur) var(--sh-spread) var(--sh-color);
+            box-shadow: var(--sh-x) var(--sh-y) var(--sh-blur) var(--sh-spread) var(--sh-color), var(--sh-x) calc(var(--sh-y) + 2px) var(--sh-blur) var(--sh-spread) var(--sh-color);
     /* 影なし=色変化、影あり=後で個別に無効化 */
-    filter: brightness(1.05);
+    -webkit-filter: brightness(1.05);
+            filter: brightness(1.05);
   }
 }
 /* Active：影ゼロ＋元の影量ぶんだけ下げる。
@@ -392,9 +447,12 @@ h1 {
 .btn:active,
 .btn[aria-pressed=true],
 .btn.is-active {
-  transform: translateY(var(--sh-y));
-  box-shadow: none;
-  filter: brightness(0.95);
+  -webkit-transform: translateY(var(--sh-y));
+          transform: translateY(var(--sh-y));
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-filter: brightness(0.95);
+          filter: brightness(0.95);
 }
 
 /* アクセシビリティ */
@@ -426,7 +484,8 @@ h1 {
   position: absolute;
   top: 50%;
   right: 20px;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 0;
   height: 0;
   border-left: 8px solid #fff;
@@ -439,9 +498,15 @@ h1 {
   --arrow-w: 8px; /* 矢印の幅 */
   --arrow-h: 12px; /* 矢印の高さ */
   --arrow-color: #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center; /* 縦中央 */
-  justify-content: flex-start; /* 左寄せ */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; /* 縦中央 */
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; /* 左寄せ */
   gap: 0; /* テキストに“くっつける” */
   text-align: left;
   border-radius: 24px;
@@ -451,13 +516,18 @@ h1 {
 }
 .btn3 p {
   font-weight: inherit;
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   position: relative;
   padding: 0;
   margin: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .btn3 p::after {
   content: "";
@@ -466,7 +536,9 @@ h1 {
   background: var(--arrow-color);
   /* 左向き三角（▶ の反転） */
   clip-path: polygon(100% 50%, 0 0, 0 100%);
-  flex: 0 0 var(--arrow-w); /* 伸縮させない */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 var(--arrow-w);
+          flex: 0 0 var(--arrow-w); /* 伸縮させない */
   /* “くっつける”ので余白は付けない（必要なら margin-left: 2px 等） */
   margin-left: 3px;
 }
@@ -480,13 +552,15 @@ h1 {
 /* 影ありは色変化を無効化して“影で表現” */
 @media (hover: hover) and (pointer: fine) {
   .btn4:hover {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
   }
 }
 .btn4:active,
 .btn4[aria-pressed=true],
 .btn4.is-active {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 /* 大きめのドロップシャドウ（影=あり） */
@@ -499,13 +573,15 @@ h1 {
 
 @media (hover: hover) and (pointer: fine) {
   .btn5:hover {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
   }
 }
 .btn5:active,
 .btn5[aria-pressed=true],
 .btn5.is-active {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 /* グラデ（影=なし） */
@@ -520,8 +596,12 @@ h1 {
   height: 80px;
   width: 100%;
   background: #f5810e;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .btn7,
@@ -550,7 +630,8 @@ h1 {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
   width: 50px;
   height: 2px;
   background-color: currentColor;
@@ -564,17 +645,23 @@ h1 {
   border-radius: 50%;
   padding: 0;
   /* 影は別系統（ここでは“影なし”扱いにしておく） */
-  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.13);
+          box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.13);
 }
 
 /* 2つ並び（SPでは縦並び） */
 .button10 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 10px;
 }
 @media screen and (max-width: 767px) {
   .button10 {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -587,13 +674,15 @@ h1 {
 
 @media (hover: hover) and (pointer: fine) {
   .btn10:hover {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
   }
 }
 .btn10:active,
 .btn10[aria-pressed=true],
 .btn10.is-active {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 /* 色違い：緑（影色も“緑の5%暗め”に修正） */
