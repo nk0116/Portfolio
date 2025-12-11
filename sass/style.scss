@@ -65,8 +65,8 @@ body {
         fill: color.$bg-dark;
       }
 
-      .twitter-icon {
-        fill: color.$cl-twitter;
+      .x-icon {
+        fill: color.$bg-dark;
       }
 
       .button__text {
@@ -534,7 +534,7 @@ body {
     background-color: color.$bg-gray-l;
   }
 
-  .page-bottom__item-twitter {
+  .page-bottom__item-x {
     background-color: color.$bg-dark;
   }
   @include breakpoints.mq(pc) {
