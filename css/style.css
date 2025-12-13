@@ -355,7 +355,9 @@ body.is-fixed {
   margin-top: 20px;
 }
 .about .about__img {
-  margin-bottom: 32px;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
 }
 .about .about__img img {
   box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
@@ -366,6 +368,10 @@ body.is-fixed {
     flex-direction: row-reverse;
     gap: 40px;
   }
+}
+
+.about__text-contents {
+  max-width: 60%;
 }
 
 .flow {

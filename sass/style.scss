@@ -411,7 +411,9 @@ body {
     margin-top: 20px;
   }
   .about__img {
-    margin-bottom: 32px;
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
     img {
       box-shadow: $img-box-shadow;
     }
@@ -425,6 +427,9 @@ body {
   }
 }
 
+.about__text-contents{
+  max-width: 60%;
+}
 // flow
 .flow {
   background-color: color.$bg-light;
