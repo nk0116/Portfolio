@@ -120,6 +120,10 @@ body {
   .button__text {
     color: color.$white;
   }
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 // header
@@ -527,15 +531,24 @@ body {
 .page-bottom {
   padding: 0;
   color: color.$white;
+
   .page-bottom__item {
+    display: block;
     padding: 40px;
+    transition: opacity 0.3s ease;
+    &:hover {
+      opacity: 0.7;
+    }
   }
+
   .page-bottom__item--contact {
     background-color: color.$bg-gray-l;
   }
 
   .page-bottom__item-x {
+    display: block;
     background-color: color.$bg-dark;
+    transition: opacity 0.3s ease;
   }
   @include breakpoints.mq(pc) {
     display: grid;

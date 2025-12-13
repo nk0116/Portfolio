@@ -99,6 +99,9 @@ body.is-fixed {
 .button--border .button__text {
   color: #fff;
 }
+.button--border:hover {
+  opacity: 0.7;
+}
 
 .header {
   background-color: #2f2f2f;
@@ -461,13 +464,20 @@ body.is-fixed {
   color: #fff;
 }
 .page-bottom .page-bottom__item {
+  display: block;
   padding: 40px;
+  transition: opacity 0.3s ease;
+}
+.page-bottom .page-bottom__item:hover {
+  opacity: 0.7;
 }
 .page-bottom .page-bottom__item--contact {
   background-color: #595959;
 }
 .page-bottom .page-bottom__item-x {
+  display: block;
   background-color: #2f2f2f;
+  transition: opacity 0.3s ease;
 }
 @media screen and (min-width: 768px) {
   .page-bottom {
