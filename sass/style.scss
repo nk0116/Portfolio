@@ -1,5 +1,7 @@
 @use "color";
-@use "breakpoints";
+@use "breakpoints" as *;
+
+$img-border-radius: 10px;
 
 $img-box-shadow: 0 4px 15px 0 rgba(color.$black, 0.15);
 
@@ -22,14 +24,14 @@ body {
 #about,
 #flow,
 #message {
-  @include breakpoints.mq(sp) {
+  @include mq(sp) {
     // スマホのときだけ
     scroll-margin-top: 88px; // スクロールするときにヘッダー分調整
   }
 }
 
 .section {
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     .section__inner {
       max-width: calc(880px + 32px * 2);
       margin: 0 auto;
@@ -53,12 +55,12 @@ body {
   width: 160px;
   margin: 0 auto;
 
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     transition: background 0.3s, color 0.3s, opacity 0.3s;
   }
 
   &:hover {
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       background-color: color.$white;
 
       .button__icon-path {
@@ -100,7 +102,7 @@ body {
 .button--bg {
   background-color: color.$white;
 
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     color: color.$bg-dark;
     &:hover {
       opacity: 0.7;
@@ -136,7 +138,7 @@ body {
   z-index: 1000;
   overflow-y: auto;
 
-  @include breakpoints.mq(pc-lg) {
+  @include mq(pc-lg) {
     position: sticky;
     top: 0;
     height: 100vh;
@@ -147,7 +149,7 @@ body {
 
   &__container {
     position: relative;
-    @include breakpoints.mq(pc-lg) {
+    @include mq(pc-lg) {
       width: 160px;
       margin: 0 auto;
       position: sticky;
@@ -161,7 +163,7 @@ body {
     font-size: 20px;
     color: color.$white;
 
-    @include breakpoints.mq(pc-lg) {
+    @include mq(pc-lg) {
       font-size: 30px;
       letter-spacing: 0.12em;
       line-height: 1;
@@ -179,7 +181,7 @@ body {
     color: transparent;
     background: url("../img/bg_menu.png") center center no-repeat;
     background-size: 100% auto;
-    @include breakpoints.mq(pc-lg) {
+    @include mq(pc-lg) {
       display: none;
     }
 
@@ -201,7 +203,7 @@ body {
     border-top: 1px solid color.$white;
     padding-top: 60px;
 
-    @include breakpoints.mq(pc-lg) {
+    @include mq(pc-lg) {
       display: block;
       border: none;
     }
@@ -210,10 +212,10 @@ body {
 
 // main
 .main {
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     flex-basis: 79.2%;
   }
-  @include breakpoints.mq(tb) {
+  @include mq(tb) {
     flex-basis: 100%;
   }
 }
@@ -232,7 +234,7 @@ body {
     background-size: 100% auto;
     padding: 32px;
 
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       background: url(../img/bg_fv.png) center center no-repeat;
       background-size: 100% auto;
       bottom: 100px;
@@ -243,7 +245,7 @@ body {
       padding-left: 96px;
     }
 
-    @include breakpoints.mq(tb) {
+    @include mq(tb) {
       bottom: 50%;
       transform: translateY(50%);
     }
@@ -279,7 +281,7 @@ body {
       // display: block;
       font-size: 40px;
       letter-spacing: 0.1em;
-      @include breakpoints.mq(pc) {
+      @include mq(pc) {
         font-size: 54px;
       }
     }
@@ -306,7 +308,7 @@ body {
 // service
 .service {
   .service__list {
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 8%;
@@ -330,7 +332,7 @@ body {
   .service__item + .about {
     margin-top: 40px;
 
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       margin-top: 0;
     }
   }
@@ -344,7 +346,7 @@ body {
 .works {
   background-color: color.$bg-light;
 
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     .works__list {
       display: grid;
       // ３個以上で改行
@@ -355,7 +357,7 @@ body {
   //.works__itemの中では機能しなかったためここに記載
   .works__item + .works__item {
     margin-top: 40px;
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       margin-top: 0;
     }
   }
@@ -411,14 +413,16 @@ body {
     margin-top: 20px;
   }
   .about__img {
+    max-width: 100%;
     width: 600px;
     height: auto;
     margin: 0 auto;
     img {
+
       box-shadow: $img-box-shadow;
     }
   }
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     .about__container {
       display: flex;
       flex-direction: row-reverse;
@@ -427,8 +431,11 @@ body {
   }
 }
 
-.about__text-contents{
+.about__text-contents {
   max-width: 60%;
+  @include mq(sp) {
+    max-width: 100%;
+  }
 }
 // flow
 .flow {
@@ -465,7 +472,7 @@ body {
   .flow__contents + .flow__contents {
     margin-top: 46px;
 
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       margin-top: 0;
     }
   }
@@ -473,13 +480,13 @@ body {
   .flow__list {
     margin-top: 64px;
 
-    @include breakpoints.mq(pc) {
+    @include mq(pc) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
-    @include breakpoints.mq(tb) {
+    @include mq(tb) {
       grid-template-columns: repeat(2, 1fr);
       gap: 40px 16px;
     }
@@ -523,7 +530,7 @@ body {
     line-height: 1.6;
   }
 
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     .message__container {
       display: flex;
       flex-direction: row-reverse;
@@ -555,7 +562,7 @@ body {
     background-color: color.$bg-dark;
     transition: opacity 0.3s ease;
   }
-  @include breakpoints.mq(pc) {
+  @include mq(pc) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     .page-bottom__item {
@@ -579,7 +586,7 @@ body {
 /*-----------------------------------
 // pc
 -----------------------------------*/
-@include breakpoints.mq(pc) {
+@include mq(pc) {
   .wrapper {
     display: flex;
   }

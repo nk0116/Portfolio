@@ -355,6 +355,7 @@ body.is-fixed {
   margin-top: 20px;
 }
 .about .about__img {
+  max-width: 100%;
   width: 600px;
   height: auto;
   margin: 0 auto;
@@ -372,6 +373,11 @@ body.is-fixed {
 
 .about__text-contents {
   max-width: 60%;
+}
+@media screen and (max-width: 767px) {
+  .about__text-contents {
+    max-width: 100%;
+  }
 }
 
 .flow {
