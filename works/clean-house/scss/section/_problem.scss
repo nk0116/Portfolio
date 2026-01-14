@@ -1,0 +1,108 @@
+@use "../functions/mixin" as *;
+@use "../functions/variables" as *;
+
+.problem {
+  background: $color-bg-main;
+  display: flex;
+  padding-top: 56px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.problem__inner {
+  width: 100%;
+}
+
+.problem__contents {
+}
+
+.problem__title {
+}
+
+.problem__lists {
+  width: fit-content;
+  margin: 32px auto 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.problem__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px 8px;
+}
+
+.problem__list-icon {
+}
+
+.problem__list-text {
+  font-size: 18px;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.problem__pictures {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.problem__picture-human {
+  margin: 0 auto;
+  width: 121px;
+  height: 150px;
+  aspect-ratio: 121/150;
+}
+
+.problem__picture-dust {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.problem__picture-triangle {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.problem__before-after {
+  background: $color-bg-green;
+}
+
+.problem__before-after-header {
+  display: flex;
+  flex-direction: row;
+  padding-top: 45px;
+  gap: 8px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.problem__before-after-human {
+  width: 108px;
+  height: 163px;
+  aspect-ratio: 108/163;
+}
+
+.problem__before-after-text {
+  width: 166px;
+  height: 123px;
+  margin: auto 0;
+  padding-top: 8px;
+}
+
+.problem__before-after-1 {
+}
+
+.problem__before-after-2 {
+}

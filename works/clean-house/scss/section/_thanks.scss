@@ -1,0 +1,130 @@
+@use "../functions/mixin" as *;
+@use "../functions/variables" as *;
+
+.thanks-section {
+  background-color: #3baf75;
+  padding: 48px 0 88px;
+  border-bottom: 1px solid  #F9FBEB;
+}
+
+.thanks-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.thanks-section__image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.thanks-section__image {
+  width: 80px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.thanks-section__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.thanks-section__title {
+  color: $color-bg-main;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.thanks-section__description {
+  color: $color-bg-main;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: center;
+}
+
+.thanks-section__button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  margin-top: 36px;
+  background-color: $color-bg-main;
+  border-radius: 72px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.thanks-section__button-text {
+  color: #197647;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.thanks-section__button-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+@include mq(sp-small) {
+  .thanks-section {
+    min-height: auto;
+    padding: 32px 0;
+  }
+
+  .thanks-section__content {
+    gap: 32px;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .thanks-section__title {
+    font-size: 20px;
+  }
+
+  .thanks-section__description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .thanks-section__button {
+    padding: 6px 20px;
+  }
+
+  .thanks-section__button-text {
+    font-size: 16px;
+  }
+
+  .thanks-section__button-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

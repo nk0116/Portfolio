@@ -1,0 +1,58 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.contact2-4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.contact2-4__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.contact2-4__checkbox-visual {
+  width: 24px;
+  height: 24px;
+  background-color: $color-white;
+  border: 1px solid $color-gray;
+  border-radius: 2px;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 6px;
+    height: 10px;
+    border: solid $color-gray;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s;
+  }
+}
+
+.contact2-4__checkbox:checked + .contact2-4__checkbox-visual {
+  &::after {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+.contact2-4__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5em;
+  text-align: left;
+  color: $color-gray;
+}

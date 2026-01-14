@@ -1,0 +1,15 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.price-info {
+  display: flex;
+  width: fit-content;
+}
+
+.price-info__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}

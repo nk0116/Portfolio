@@ -1,0 +1,166 @@
+@use "../functions/variables" as *;
+@use "../functions/mixin" as *;
+@use "../functions/reset" as *;
+@use "../functions/base" as *;
+
+// 色変数
+$color-phone-red: #fa383c;
+$color-phone-yellow: #faf638;
+
+.footer-tel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 15px;
+  height: 98px;
+  background-color: $color-text-green;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 1000;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  margin: 0 !important;
+}
+
+.footer-tel--hidden {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+  pointer-events: none;
+}
+
+.footer-tel__phone-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px 0 8px;
+  margin: 0 auto;
+  flex: 1;
+  min-width: 0;
+  height: 72px;
+  background-color: $color-phone-red;
+  border: 2px solid $color-border-white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.footer-tel__phone-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  @media (min-width: 360px) {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.footer-tel__phone-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.footer-tel__phone-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 0 4px;
+}
+
+.footer-tel__phone-label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.3em;
+  text-align: left;
+  color: $color-white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 360px) {
+    font-size: 14px;
+  }
+}
+
+.footer-tel__phone-time {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.13;
+  text-align: left;
+  color: $color-white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 360px) {
+    font-size: 16px;
+  }
+}
+
+.footer-tel__phone-number {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 4px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 0.82em;
+  color: $color-white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (min-width: 360px) {
+    font-size: 22px;
+    gap: 8px;
+  }
+}
+
+.footer-tel__other-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 72px;
+  min-width: 72px;
+  height: 72px;
+  background-color: $color-phone-yellow;
+  border: 2px solid $color-border-white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+
+  svg {
+    width: 32px;
+    height: 24px;
+  }
+
+  @media (min-width: 360px) {
+    width: 84px;
+    min-width: 84px;
+
+    svg {
+      width: 36px;
+      height: 28px;
+    }
+  }
+}

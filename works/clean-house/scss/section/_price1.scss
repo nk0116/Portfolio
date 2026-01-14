@@ -1,0 +1,293 @@
+@use "../functions/variables" as *;
+@use "../functions/mixin" as *;
+@use "../functions/reset" as *;
+@use "../functions/base" as *;
+
+// 料金セクション全体
+.price-section {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+  padding: 48px 0 0;
+  background-color: $color-bg-green;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 38px;
+}
+
+.price-section__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.price-info {
+  margin-bottom: -12px;
+  padding: 0 37px;
+  display: flex;
+  width: fit-content;
+}
+
+.price-info__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// 料金タイトル
+.price-title {
+  background: $color-gray;
+  margin-bottom: 39px;
+
+  &::before {
+    width: 20px;
+    background: url(../img/price-title-icon.svg) no-repeat center center / 100% 100%;
+  }
+}
+
+// 料金テーブル
+.price-table {
+  width: 346px;
+  min-width: 346px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: $color-bg-main;
+  flex-shrink: 0;
+}
+
+.price-table thead tr {
+  border-bottom: 1px solid $color-gray;
+}
+
+.price-table tbody tr {
+  border-bottom: 1px solid $color-gray;
+}
+
+.price-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.price-table__header {
+  background-color: $color-gray;
+  color: $color-bg-main;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.1em;
+  text-align: center;
+  align-items: center;
+  height: 58px;
+  vertical-align: middle;
+  border-right: 1px solid $color-bg-green;
+  white-space: nowrap;
+}
+
+.price-table__header:last-child {
+  border-right: none;
+}
+
+.price-table__header--plan {
+  width: 82px;
+}
+
+.price-table__header--price {
+  width: 84px;
+}
+
+.price-table__header--discount {
+  width: 70px;
+}
+
+.price-table__header--web {
+  width: 110px;
+}
+
+.price-table__cell {
+  background-color: $color-bg-main;
+  color: $color-gray;
+  padding: 4px 5px;
+  height: 58px;
+  vertical-align: middle;
+  text-align: center;
+  border-right: 1px solid $color-gray;
+}
+
+.price-table__cell:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+.price-table__cell--plan {
+  width: 82px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.price-table__cell--plan-large {
+  line-height: 1.3em;
+}
+
+.price-table__cell--price {
+  width: 84px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.4em;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  text-decoration: line-through;
+}
+
+.price-table__cell--discount {
+  width: 70px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.2em;
+  text-align: center;
+  color: $color-discount;
+}
+
+.price-table__cell--discount-43 {
+  font-size: 17px;
+}
+
+.price-table__cell--discount-25,
+.price-table__cell--discount-28,
+.price-table__cell--discount-18 {
+  font-size: 19px;
+  line-height: 1.2em;
+}
+
+.price-table__cell--consultation {
+  width: 264px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-gray;
+}
+
+.price-table__cell--web {
+  width: 110px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-orange;
+}
+
+.price-table__price-original {
+  text-decoration-color: $color-gray;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.price-table__web-price-number {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+tr:has(.price-table__cell--discount-43) .price-table__web-price-number {
+  font-size: 20px;
+}
+
+tr:has(.price-table__cell--discount-25) .price-table__web-price-number,
+tr:has(.price-table__cell--discount-28) .price-table__web-price-number,
+tr:has(.price-table__cell--discount-18) .price-table__web-price-number {
+  font-size: 20px;
+}
+
+.price-section__table-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 48px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 8px;
+}
+
+// テーブルを囲むスクロール可能なラッパー
+.price-table-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  justify-content: center;
+
+  > .price-table {
+    flex-shrink: 0;
+  }
+
+  // 画面幅がテーブル幅より小さい場合、左寄せにしてスクロール可能にする
+  @media (max-width: 345px) {
+    justify-content: flex-start;
+  }
+}
+
+.price-section__footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.price-section__note {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.56px;
+  text-align: left;
+  color: $color-bg-main;
+  width: 56%;
+  padding: 0 0 0 20px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.price-section__house-image {
+  position: absolute;
+  left: calc(50% + 138px);
+  top: 48%;
+  transform: translateX(-50%);
+  width: 273px;
+  height: 265px;
+  object-fit: cover;
+}
+
+.price-section__images {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 60px;
+}
+
+.price-section__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}

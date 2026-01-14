@@ -1,0 +1,18 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-section__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+

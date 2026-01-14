@@ -1,0 +1,22 @@
+@use "./functions/reset" as *;
+@use "./functions/base" as *;
+@use "./functions/mixin" as *;
+@use "./functions/variables" as *;
+
+// セクション
+@use "./section/header" as *;
+@use "./section/fv" as *;
+@use "./section/problem" as *;
+@use "./section/contact1" as *;
+@use "./section/feature1" as *;
+@use "./section/price1" as *;
+@use "./section/flow1" as *;
+@use "./section/area1" as *;
+@use "./section/qa1" as *;
+@use "./section/cta1" as *;
+@use "./section/footer1" as *;
+@use "./section/contact-form1" as *;
+@use "./section/footer-tel" as *;
+@use "./section/thanks" as *;
+
+// * {outline: 2px solid red};

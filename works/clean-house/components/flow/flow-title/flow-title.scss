@@ -1,0 +1,34 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.flow-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 12px 32px;
+  background-color: $color-gray;
+  width: fit-content;
+  position: relative;
+}
+
+.flow-title__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-white;
+}
+
+.flow-title__icon {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 2px);
+  width: 20px;
+  height: 100%;
+  background: url(../../../img/flow-title-icon.svg) no-repeat center center / 100% 100%;
+}

@@ -1,0 +1,157 @@
+@use "../functions/variables" as *;
+@use "../functions/mixin" as *;
+@use "../functions/reset" as *;
+@use "../functions/base" as *;
+
+.area-title {
+  background: $color-gray;
+  margin-bottom: 32px;
+
+  &::before {
+    width: 20px;
+    background: url(../img/area-title-icon.svg) no-repeat center center / 100% 100%;
+  }
+}
+
+// area-accordion styles
+.area-accordions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+  padding: 0 14px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.area-accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-gray;
+  border-radius: 4px;
+  overflow: hidden;
+  // padding: 0 8px;
+}
+
+.area-accordion__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  padding: 8px 24px;
+  background-color: $color-gray;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.area-accordion__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22em;
+  text-align: left;
+  color: $color-white;
+}
+
+.area-accordion__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.area-accordion__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  padding: 8px;
+  background-color: $color-white;
+}
+
+.area-accordion__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4em;
+  text-align: left;
+  color: $color-gray;
+  margin: 0;
+  width: 330px;
+}
+
+.area-accordion--closed .area-accordion__header {
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+.area-accordion--closed .area-accordion__content {
+  display: none;
+}
+
+.area-accordion--closed .area-accordion__icon--minus {
+  display: none;
+}
+
+.area-accordion--closed .area-accordion__icon--plus {
+  display: block;
+}
+
+.area-accordion:not(.area-accordion--closed) .area-accordion__icon--minus {
+  display: block;
+}
+
+.area-accordion:not(.area-accordion--closed) .area-accordion__icon--plus {
+  display: none;
+}
+
+// area-section styles
+.area-section {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+  padding: 48px 0 64px;
+  background-color: $color-bg-green;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-section__car-image {
+  position: absolute;
+  left: calc(50% + 82px);
+  top: -41.52px;
+  transform: translateX(-50%);
+  width: 354.62px;
+  height: 354.62px;
+  object-fit: contain;
+  z-index: 0;
+  opacity: 1;
+}
+
+.area-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.area-section__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6em;
+  text-align: left;
+  color: $color-white;
+  width: 322px;
+  margin: 0;
+  padding: 0 8px;
+}

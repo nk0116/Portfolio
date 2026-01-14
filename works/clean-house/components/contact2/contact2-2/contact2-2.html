@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- フォントを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSを読み込む -->
+    <link rel="stylesheet" href="../css/contact2-2.css" />
+    <title>お問合せ内容ラベルコンポーネント</title>
+  </head>
+  <body>
+    <div class="contact2-2-form">
+      <div class="contact2-2">
+        <div class="contact2-2__header">
+          <div class="contact2-2__tag">必須</div>
+          <div class="contact2-2__label">お問合せ内容</div>
+        </div>
+        <div class="contact2-2__options">
+          <label class="contact2-2-option">
+            <input type="radio" name="contact-content" value="consultation" class="contact2-2-option__input" />
+            <div class="contact2-2-option__radio">
+              <div class="contact2-2-option__radio-circle"></div>
+            </div>
+            <div class="contact2-2-option__text">まずは無料で相談したい</div>
+          </label>
+          <label class="contact2-2-option">
+            <input type="radio" name="contact-content" value="reservation" class="contact2-2-option__input" />
+            <div class="contact2-2-option__radio">
+              <div class="contact2-2-option__radio-circle"></div>
+            </div>
+            <div class="contact2-2-option__text">日程の予約をしたい</div>
+          </label>
+          <label class="contact2-2-option">
+            <input type="radio" name="contact-content" value="other" class="contact2-2-option__input" />
+            <div class="contact2-2-option__radio">
+              <div class="contact2-2-option__radio-circle"></div>
+            </div>
+            <div class="contact2-2-option__text">その他</div>
+          </label>
+        </div>
+      </div>
+      <div class="contact2-2-input">
+        <div class="contact2-2-input__header">
+          <div class="contact2-2-input__tag">必須</div>
+          <div class="contact2-2-input__label">お名前</div>
+        </div>
+        <input type="text" class="contact2-2-input__field" placeholder="お名前を入力してください" />
+      </div>
+      <div class="contact2-2-input">
+        <div class="contact2-2-input__header">
+          <div class="contact2-2-input__tag">必須</div>
+          <div class="contact2-2-input__label">メールアドレス</div>
+        </div>
+        <input type="email" class="contact2-2-input__field" placeholder="例）info@example.com" />
+      </div>
+      <div class="contact2-2-input">
+        <div class="contact2-2-input__header">
+          <div class="contact2-2-input__tag">必須</div>
+          <div class="contact2-2-input__label">電話番号</div>
+        </div>
+        <input type="tel" class="contact2-2-input__field" placeholder="例）090-0000-0000" />
+      </div>
+      <div class="contact2-2-input contact2-2-input--postal">
+        <div class="contact2-2-input__header">
+          <div class="contact2-2-input__tag">必須</div>
+          <div class="contact2-2-input__label">郵便番号</div>
+        </div>
+        <input type="text" class="contact2-2-input__field" placeholder="例）000-0000" />
+      </div>
+      <div class="contact2-2-input">
+        <div class="contact2-2-input__header">
+          <div class="contact2-2-input__tag">必須</div>
+          <div class="contact2-2-input__label">住所</div>
+        </div>
+        <input type="text" class="contact2-2-input__field" placeholder="住所を入力してください" />
+      </div>
+      <div class="contact2-2-input">
+        <div class="contact2-2-input__header">
+          <div class="contact2-2-input__tag">必須</div>
+          <div class="contact2-2-input__label">お問合せ内容</div>
+        </div>
+        <textarea class="contact2-2-input__textarea" placeholder="お問合せ内容をできるだけ具体的にお書きください"></textarea>
+      </div>
+    </div>
+  </body>
+</html>

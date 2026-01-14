@@ -1,0 +1,35 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.contact2-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 16px 12px 32px;
+  background-color: $color-bg-green;
+  width: fit-content;
+  position: relative;
+}
+
+.contact2-title__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-white;
+}
+
+.contact2-title__icon {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 2px);
+  width: 20px;
+  height: 100%;
+  background: url(../../../img/contact2-title-icon.svg) no-repeat center center / 100% 100%;
+}
+

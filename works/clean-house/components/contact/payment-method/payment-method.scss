@@ -1,0 +1,60 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.payment-method {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px;
+    width: 74px;
+    height: 74px;
+    border: 2px solid $color-bg-green;
+    border-radius: 56px;
+    background-color: transparent;
+    box-sizing: border-box;
+
+    &--cash {
+      background-color: transparent;
+    }
+
+    &--card {
+      background-color: transparent;
+    }
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+  }
+
+  &__option-text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: $color-bg-green;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+
+    .payment-method__option--cash & {
+      font-size: 16px;
+      line-height: 1.2em;
+    }
+
+    .payment-method__option--card & {
+      font-size: 13px;
+      line-height: 1em;
+      letter-spacing: -0.08em;
+    }
+  }
+}

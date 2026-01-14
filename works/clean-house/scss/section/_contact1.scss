@@ -1,0 +1,108 @@
+@use "../functions/variables" as *;
+@use "../functions/mixin" as *;
+@use "../functions/reset" as *;
+@use "../functions/base" as *;
+
+// お問い合わせセクション全体
+.contact1 {
+  background-color: $color-bg-green;
+  padding: 48px 0 0;
+}
+
+.contact1__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact1__contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.contact-section {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  width: 333px;
+  background-color: $color-bg-main;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+.contact-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.contact-section__contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 300px;
+}
+
+.contact-section__urgent-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1em;
+  text-align: left;
+  color: $color-bg-green;
+  margin: 0;
+}
+
+// ご相談ヘッダー
+.consultation-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 67px;
+}
+
+.consultation-header__badge-wrapper {
+  width: 113px;
+  height: 113px;
+  // flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  right: -11px;
+}
+
+.consultation-header__badge-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.consultation-header__message {
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1em;
+  text-align: left;
+  color: $color-text-green;
+  white-space: nowrap;
+}
+
+// 電話コンポーネント、メールコンポーネント、お支払い方法は_base.scssに移動
+
+.contact1-discount {
+  padding-top: 64px;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}

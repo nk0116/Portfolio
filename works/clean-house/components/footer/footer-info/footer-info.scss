@@ -1,0 +1,116 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  padding: 40px 28px 0;
+  background-color: $color-bg-green;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 0 0 8px;
+  width: 303px;
+}
+
+.footer__company {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.footer__company-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(249, 251, 235, 0.5);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.6em;
+  letter-spacing: 0.08em;
+  text-align: center;
+  color: $color-bg-main;
+  margin: 0;
+}
+
+.footer__company-items {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 8px;
+}
+
+.footer__company-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  border-bottom: 0.5px solid rgba(249, 251, 235, 0.5);
+}
+
+.footer__company-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 86px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-bg-main;
+}
+
+.footer__company-value {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  width: 150px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-bg-main;
+}
+
+.footer__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__logo-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  opacity: 0.9;
+}
+
+.footer__copyright {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-bg-main;
+  margin: 0;
+}

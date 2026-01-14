@@ -1,0 +1,14 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.feature-section {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+  padding: 56px 0 64px 0;
+  background-color: $color-bg-main;
+  width: 100%;
+}

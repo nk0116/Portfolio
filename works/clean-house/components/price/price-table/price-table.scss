@@ -1,0 +1,163 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.price-table {
+  width: 346px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: $color-bg-main;
+}
+
+.price-table thead tr {
+  border-bottom: 1px solid $color-gray;
+}
+
+.price-table tbody tr {
+  border-bottom: 1px solid $color-gray;
+}
+
+.price-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.price-table__header {
+  background-color: $color-gray;
+  color: $color-bg-main;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.1em;
+  text-align: center;
+  align-items: center;
+  height: 58px;
+  vertical-align: middle;
+  border-right: 1px solid $color-bg-green;
+  white-space: nowrap;
+}
+
+.price-table__header:last-child {
+  border-right: none;
+}
+
+.price-table__header--plan {
+  width: 82px;
+}
+
+.price-table__header--price {
+  width: 84px;
+}
+
+.price-table__header--discount {
+  width: 70px;
+}
+
+.price-table__header--web {
+  width: 110px;
+}
+
+.price-table__cell {
+  background-color: $color-bg-main;
+  color: $color-gray;
+  padding: 12px 5px;
+  height: 58px;
+  vertical-align: middle;
+  text-align: center;
+  border-right: 1px solid $color-gray;
+}
+
+.price-table__cell:last-child {
+  border-right: none;
+  text-align: center;
+}
+
+.price-table__cell--plan {
+  width: 82px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.price-table__cell--plan-large {
+  line-height: 1.3em;
+}
+
+.price-table__cell--price {
+  width: 84px;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.4em;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  text-decoration: line-through;
+}
+
+.price-table__cell--discount {
+  width: 70px;
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.2em;
+  text-align: center;
+  color: $color-discount;
+}
+
+.price-table__cell--discount-43 {
+  font-size: 17px;
+}
+
+.price-table__cell--discount-25,
+.price-table__cell--discount-28,
+.price-table__cell--discount-18 {
+  font-size: 19px;
+  line-height: 1.2em;
+}
+
+.price-table__cell--consultation {
+  width: 264px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-gray;
+}
+
+.price-table__cell--web {
+  width: 110px;
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+  color: $color-orange;
+}
+
+.price-table__price-original {
+  text-decoration-color: $color-gray;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.price-table__web-price-number {
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 700;
+  line-height: 1.2em;
+}
+
+tr:has(.price-table__cell--discount-43) .price-table__web-price-number {
+  font-size: 20px;
+}
+
+tr:has(.price-table__cell--discount-25) .price-table__web-price-number,
+tr:has(.price-table__cell--discount-28) .price-table__web-price-number,
+tr:has(.price-table__cell--discount-18) .price-table__web-price-number {
+  font-size: 20px;
+}

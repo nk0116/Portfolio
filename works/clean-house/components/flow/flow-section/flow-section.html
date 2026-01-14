@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- フォントを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSを読み込む -->
+    <link rel="stylesheet" href="../css/flow-title.css" />
+    <link rel="stylesheet" href="../css/flow-item.css" />
+    <link rel="stylesheet" href="../css/flow-section.css" />
+    <title>フローセクションコンポーネント</title>
+  </head>
+  <body>
+    <section class="flow-section">
+      <h2 class="flow-title">
+        <span class="flow-title__text">ゴミ屋敷の片付けの流れ</span>
+        <div class="flow-title__icon"></div>
+      </h2>
+
+      <div class="flow-section__steps">
+        <div class="flow-item">
+          <div class="flow-item__header">
+            <div class="flow-item__step-wrapper">
+              <div class="flow-item__step-badge-wrapper">
+                <img src="../../../img/flow-step-1.png" alt="STEP 1" class="flow-item__step-badge" />
+              </div>
+              <h3 class="flow-item__title">無料相談・お問合せ</h3>
+            </div>
+          </div>
+          <p class="flow-item__description">お電話・メールでお気軽にご相談ください。片付けや掃除でご不安な点、お客様のご都合をお伺いしてお見積りの日時を調整させていただきます。</p>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-item__header">
+            <div class="flow-item__step-wrapper">
+              <div class="flow-item__step-badge-wrapper">
+                <img src="../../../img/flow-step-2.png" alt="STEP 2" class="flow-item__step-badge" />
+              </div>
+              <h3 class="flow-item__title">無料お見積もり</h3>
+            </div>
+          </div>
+          <p class="flow-item__description">ご訪問して見積りを行います。見積りにご承諾いただいた上で作業を進めますのでご安心ください。当日はもちろん、別の日時での予約も可能です。</p>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-item__header">
+            <div class="flow-item__step-wrapper">
+              <div class="flow-item__step-badge-wrapper">
+                <img src="../../../img/flow-step-3.png" alt="STEP 3" class="flow-item__step-badge" />
+              </div>
+              <h3 class="flow-item__title">作業開始</h3>
+            </div>
+          </div>
+          <p class="flow-item__description">
+            不用品の回収作業を開始いたします。
+            <br />
+            基本的にはお客様の立ち合いをお願いしていますが、もし立会いが難しい場合は一度ご相談ください。
+          </p>
+        </div>
+
+        <div class="flow-item">
+          <div class="flow-item__header">
+            <div class="flow-item__step-wrapper">
+              <div class="flow-item__step-badge-wrapper">
+                <img src="../../../img/flow-step-4.png" alt="STEP 4" class="flow-item__step-badge" />
+              </div>
+              <h3 class="flow-item__title">作業終了</h3>
+            </div>
+          </div>
+          <p class="flow-item__description">作業完了後に、お見積りした金額をお支払いいただきます。お支払い方法は現金の他、クレジットカードに対応しています。</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

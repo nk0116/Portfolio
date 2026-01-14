@@ -1,0 +1,122 @@
+@use "../functions/mixin" as *;
+@use "../functions/variables" as *;
+
+.fv {
+  background-color: #f9fbeb;
+}
+
+.fv__inner {
+  background: url(../img/fv-bg.jpg) no-repeat right center / 130%;
+  height: 592px;
+  overflow: hidden;
+  position: relative;
+}
+
+.fv__contents {
+  background: url(../img/fv-bg-green.png) no-repeat center bottom / 100% auto;
+  height: 201px;
+  padding-bottom: 19px;
+}
+
+.fv__contents-prefecture {
+  padding-top: 18px;
+  padding-right: 31px;
+  padding-left: 31px;
+}
+
+.fv__contents-text {
+  padding: 8px 40px 0;
+}
+
+.fv__contents-star {
+  position: absolute;
+  top: 70px;
+  right: 30px;
+  width: 28px;
+  height: 35px;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.fv__contents-price {
+  padding: 4px 5px;
+}
+
+.fv__contents-label {
+}
+
+.fv__label-lists {
+  position: absolute;
+  top: 77%;
+  left: 0;
+  z-index: 1;
+  border-radius: 0 80px 80px 0;
+  background: rgba(249, 251, 235, 0.9);
+  padding: 4px 32px 8px 8px;
+}
+
+.fv__label-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  &:nth-child(n + 2) {
+    margin-top: -7px;
+  }
+}
+
+.fv__label-icon {
+  width: 44px;
+  height: 39px;
+  text-align: right;
+  padding-top: 6px;
+}
+
+.fv__label-texts {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  position: relative;
+  width: 100%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: -10px;
+    width: 100%;
+    height: 80%;
+    background: url(../img/fv__label-list-under-line.svg) no-repeat right center / auto;
+    z-index: -1;
+  }
+}
+
+.fv__label-text {
+  color: $color-text-green;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fv__label-number {
+  color: $color-text-green;
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.fv__contents-picture {
+  width: 278px;
+  height: 278px;
+  position: absolute;
+  top: 55%;
+  left: 45%;
+}

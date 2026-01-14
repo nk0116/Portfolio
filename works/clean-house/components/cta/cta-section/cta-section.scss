@@ -1,0 +1,168 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 8px;
+  padding: 64px 18px;
+  background-color: $color-bg-green;
+  position: relative;
+}
+
+.cta-section__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  width: 333px;
+  background-color: $color-bg-main;
+  border-radius: 8px;
+}
+
+.cta-section__features {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 0 0;
+  gap: 0;
+}
+
+.cta-section__feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 4px;
+  position: relative;
+}
+
+.cta-section__feature-underline {
+  position: absolute;
+  left: 47.5px;
+  top: 32px;
+  width: 236.49px;
+  height: 4px;
+  z-index: 0;
+}
+
+.cta-section__feature:nth-child(1) .cta-section__feature-underline {
+  top: 33px;
+}
+
+.cta-section__feature:nth-child(2) .cta-section__feature-underline {
+  top: 32px;
+}
+
+.cta-section__feature-icon {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section__feature-text {
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.4em;
+  text-align: left;
+  color: $color-text-green;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 300px;
+}
+
+.cta-section__urgent-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1em;
+  text-align: left;
+  color: $color-bg-green;
+  margin: 0;
+}
+
+.cta-section__contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 16px;
+}
+
+.phone-contact {
+  text-decoration: none;
+  display: block;
+}
+
+.email-contact {
+  text-decoration: none;
+  display: block;
+}
+
+.cta-section__payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.cta-section__payment-image {
+  width: 96px;
+  height: 119px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.cta-section__payment-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cta-section__payment-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  gap: 4px;
+  padding: 0 24px 2px;
+  border-bottom: 2px dashed $color-bg-green;
+}
+
+.cta-section__payment-title-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5em;
+  text-align: center;
+  color: $color-bg-green;
+  margin: 0;
+}
+
+.cta-section__credit-card-icon {
+  position: absolute;
+  left: 199.5px;
+  top: 292px;
+  width: 18px;
+  height: 18px;
+  z-index: 1;
+}

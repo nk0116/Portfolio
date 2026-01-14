@@ -1,0 +1,40 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.feature-title {
+  margin-top: 56px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px 8px 32px;
+  align-items: flex-start;
+  gap: 0;
+  background: $color-bg-green;
+  text-align: left;
+  width: fit-content;
+  position: relative;
+  color: $color-white;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1em;
+  white-space: pre-line;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(100% - 2px);
+    width: 20px;
+    height: 100%;
+    background: url(../../../img/feature-title-icon.svg) no-repeat center center / 100% 100%;
+  }
+
+  &__number {
+    font-size: 28px;
+    line-height: 1em;
+    font-weight: 700;
+  }
+}

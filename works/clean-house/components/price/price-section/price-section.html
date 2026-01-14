@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- フォントを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSを読み込む -->
+    <link rel="stylesheet" href="../css/price-title.css" />
+    <link rel="stylesheet" href="../css/price-info.css" />
+    <link rel="stylesheet" href="../css/price-table.css" />
+    <link rel="stylesheet" href="../css/price-section.css" />
+    <title>料金セクションコンポーネント</title>
+  </head>
+  <body>
+    <section class="price-section">
+      <h2 class="price-title">
+        <span class="price-title__text">ゴミ屋敷の片付け料金</span>
+        <div class="price-title__icon"></div>
+      </h2>
+
+      <div class="price-section__content">
+        <div class="price-section__info-wrapper">
+          <div class="price-info">
+            <img src="../../../img/price-img.png" alt="料金情報" class="price-info__image" />
+          </div>
+        </div>
+
+        <div class="price-section__table-wrapper">
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th class="price-table__header price-table__header--plan">
+                  プラン
+                  <br />
+                  間取り
+                </th>
+                <th class="price-table__header price-table__header--price">定価</th>
+                <th class="price-table__header price-table__header--discount">割引率</th>
+                <th class="price-table__header price-table__header--web">
+                  WEB
+                  <br />
+                  限定価格
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="price-table__cell price-table__cell--plan">少量</td>
+                <td class="price-table__cell price-table__cell--price">
+                  <span class="price-table__price-original">13,800円</span>
+                  <br />
+                  （税込）
+                </td>
+                <td class="price-table__cell price-table__cell--discount price-table__cell--discount-43">
+                  43%
+                  <br />
+                  OFF
+                </td>
+                <td class="price-table__cell price-table__cell--web">
+                  <span class="price-table__web-price-number">7,800</span>
+                  円
+                  <br />
+                  （税込）〜
+                </td>
+              </tr>
+              <tr>
+                <td class="price-table__cell price-table__cell--plan">1K</td>
+                <td class="price-table__cell price-table__cell--price">
+                  <span class="price-table__price-original">19,800円</span>
+                  <br />
+                  （税込）
+                </td>
+                <td class="price-table__cell price-table__cell--discount price-table__cell--discount-25">
+                  25%
+                  <br />
+                  OFF
+                </td>
+                <td class="price-table__cell price-table__cell--web">
+                  <span class="price-table__web-price-number">14,800</span>
+                  円
+                  <br />
+                  （税込）〜
+                </td>
+              </tr>
+              <tr>
+                <td class="price-table__cell price-table__cell--plan">1LDK</td>
+                <td class="price-table__cell price-table__cell--price">
+                  <span class="price-table__price-original">39,800円</span>
+                  <br />
+                  （税込）
+                </td>
+                <td class="price-table__cell price-table__cell--discount price-table__cell--discount-28">
+                  28%
+                  <br />
+                  OFF
+                </td>
+                <td class="price-table__cell price-table__cell--web">
+                  <span class="price-table__web-price-number">28,800</span>
+                  円
+                  <br />
+                  （税込）〜
+                </td>
+              </tr>
+              <tr>
+                <td class="price-table__cell price-table__cell--plan">2LDK</td>
+                <td class="price-table__cell price-table__cell--price">
+                  <span class="price-table__price-original">59,800円</span>
+                  <br />
+                  （税込）
+                </td>
+                <td class="price-table__cell price-table__cell--discount price-table__cell--discount-18">
+                  18%
+                  <br />
+                  OFF
+                </td>
+                <td class="price-table__cell price-table__cell--web">
+                  <span class="price-table__web-price-number">48,800</span>
+                  円
+                  <br />
+                  （税込）〜
+                </td>
+              </tr>
+              <tr>
+                <td class="price-table__cell price-table__cell--plan price-table__cell--plan-large">
+                  3LDK
+                  <br />
+                  以上
+                </td>
+                <td class="price-table__cell price-table__cell--consultation" colspan="3">要相談</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="price-section__footer">
+            <p class="price-section__note">
+              ※ゴミ・不用品の量や現場の状況により多少異なる場合がございます。正式な料金は現場確認後、内訳を詳細に記載したお見積書をお渡しします。訪問お見積もり後の追加料金は一切ございません。
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="../../../img/house-image.png" alt="家の画像" class="price-section__house-image" />
+    </section>
+    <div class="price-section__images">
+      <img src="../../../img/price-cleanup-visual.png" alt="クリーンアップビジュアル" class="price-section__image" />
+      <img src="../../../img/contact1-discount.png" alt="割引情報" class="price-section__image" />
+    </div>
+  </body>
+</html>

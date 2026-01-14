@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- フォントを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSを読み込む -->
+    <link rel="stylesheet" href="../css/qa-item.css" />
+    <title>Q&Aアイテムコンポーネント</title>
+  </head>
+  <body>
+    <div class="qa-item qa-item--closed">
+      <button class="qa-item__question" type="button">
+        <div class="qa-item__q-badge">
+          <span class="qa-item__q-text">Q</span>
+        </div>
+        <div class="qa-item__question-content">
+          <p class="qa-item__question-text">現金以外も利用可能ですか？</p>
+          <img src="../../../img/qa-icon-closed.svg" alt="閉じる" class="qa-item__question-icon qa-item__question-icon--closed" />
+          <img src="../../../img/qa-icon.svg" alt="開く" class="qa-item__question-icon qa-item__question-icon--open" />
+        </div>
+      </button>
+      <div class="qa-item__answer">
+        <div class="qa-item__a-badge">
+          <span class="qa-item__a-text">A</span>
+        </div>
+        <p class="qa-item__answer-text">
+          現金以外にも当社ではVISA・Master・JCBなどのクレジットカードに対応していますので、安心してお問い合わせください。分割が可能なクレジットカードであれば、決済後にお客様自身で対応頂ければより安心してご依頼頂けます。
+        </p>
+      </div>
+    </div>
+    <script src="./qa-item.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- フォントを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- CSSを読み込む -->
+    <link rel="stylesheet" href="../css/payment-method.css" />
+    <title>お支払い方法コンポーネント</title>
+  </head>
+  <body>
+    <div class="payment-method">
+      <div class="payment-method__option payment-method__option--cash">
+        <svg class="payment-method__icon" width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <path
+            d="M15.0063 27.5037C8.1026 27.5037 2.50635 21.9075 2.50635 15.0037C2.50635 8.09997 8.1026 2.50372 15.0063 2.50372C21.9101 2.50372 27.5064 8.09997 27.5064 15.0037C27.5064 21.9075 21.9101 27.5037 15.0063 27.5037ZM16.2564 16.2537V15.0037H20.0063V12.5037H16.7738L19.4251 9.84997L17.6576 8.08247L15.0063 10.735L12.3551 8.08247L10.5863 9.84997L13.2388 12.5025H10.0063V15.0025H13.7563V16.2525H10.0063V18.7525H13.7563V21.2525H16.2564V18.7525H20.0063V16.2525L16.2564 16.2537Z"
+            fill="#3BAF75"
+          />
+        </svg>
+        <span class="payment-method__option-text">現金</span>
+      </div>
+      <div class="payment-method__option payment-method__option--card">
+        <svg class="payment-method__icon" width="30" height="30" viewBox="0 0 30 30" fill="none">
+          <path
+            d="M3.00093 10.3126H26.9995V9.31718C26.9995 7.11319 25.8525 6 23.5682 6H6.4323C4.14845 6 3.00047 7.11319 3.00047 9.31764L3.00093 10.3126ZM3.00093 20.6933C3.00093 22.8978 4.14799 24 6.4323 24H23.5682C25.852 24 27 22.8978 27 20.6933V12.7421H3L3.00093 20.6933ZM6.65099 18.082V16.1022C6.65099 15.5032 7.07717 15.0749 7.72204 15.0749H10.3994C11.0443 15.0749 11.4705 15.5032 11.4705 16.1022V18.082C11.4705 18.6921 11.0443 19.1094 10.3994 19.1094H7.72157C7.0767 19.1094 6.65099 18.6921 6.65099 18.082Z"
+            fill="#3BAF75"
+          />
+        </svg>
+        <span class="payment-method__option-text">
+          クレジット
+          <br />
+          カード
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

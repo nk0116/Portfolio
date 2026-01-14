@@ -1,0 +1,27 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.contact2-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  align-self: stretch;
+  padding: 8px 12px;
+  background-color: $color-white;
+  border: 0.5px solid $color-gray;
+  border-radius: 4px;
+}
+
+.contact2-3__text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5em;
+  text-align: left;
+  color: $color-gray;
+  width: 100%;
+  white-space: pre-line;
+}

@@ -1,0 +1,203 @@
+@use "../functions/variables" as *;
+@use "../functions/mixin" as *;
+@use "../functions/reset" as *;
+@use "../functions/base" as *;
+
+// 特徴セクション全体
+.feature-section {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+  padding-bottom: 64px;
+  background-color: $color-bg-main;
+  width: 100%;
+}
+
+// 特徴タイトル
+.feature-title {
+  margin-top: 56px;
+  margin-bottom: 32px;
+  flex-direction: column;
+  align-items: start;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 97%;
+    height: 100%;
+    background: url(../img/feature-title-icon.svg) no-repeat center center / 100% 100%;
+  }
+}
+
+.feature-title__number {
+  font-size: 38px;
+  line-height: 1em;
+  font-weight: 700;
+}
+
+// 特徴カード
+.feature-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 24px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+  @include mq(sp-small) {
+    padding: 0 8px;
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  border: 2px solid $color-bg-green;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-card__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+  gap: 4px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-card__icon {
+  width: 100px;
+  height: 94px;
+  flex-shrink: 0;
+  max-width: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.feature-card__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.feature-card__badge-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+.feature-card__badge {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 4px;
+  background-color: $color-bg-green;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+  font-family: "Montserrat", sans-serif;
+}
+
+.feature-card__badge-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1em;
+  text-align: left;
+  color: $color-white;
+  z-index: 1;
+  display: contents;
+  margin: 0;
+  @include mq(sp-small) {
+    font-size: 12px;
+  }
+}
+
+.feature-card__badge-text-number {
+  font-size: 18px;
+  font-weight: 700;
+  display: inline;
+  margin: 0 4px;
+  @include mq(sp-small) {
+    font-size: 14px;
+  }
+}
+
+.feature-card__badge-text-unit {
+  font-weight: 700;
+  margin-left: 0;
+  display: inline;
+}
+
+.feature-card__badge-text--weight-700 {
+  font-weight: 700;
+}
+
+.feature-card__badge-triangle {
+  width: 20px;
+  height: 20px;
+  background-color: $color-bg-green;
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+  flex-shrink: 0;
+  margin-top: -12px;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 0;
+}
+
+.feature-card__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.2em;
+  text-align: left;
+  color: $color-bg-green;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  @include mq(sp-small) {
+    font-size: 18px;
+  }
+}
+
+.feature-card__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5em;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: $color-bg-green;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.feature-card__description--weight-500 {
+  font-weight: 500;
+}

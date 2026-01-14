@@ -1,0 +1,128 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.contact2-section {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+  padding: 48px 0 80px;
+  background-color: $color-bg-main;
+}
+
+.contact2-section__description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 0 32px;
+}
+
+.contact2-section__description-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.4em;
+  text-align: left;
+  color: $color-text-green;
+  width: 314px;
+  margin: 0;
+}
+
+.contact2-section__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 24px;
+}
+
+.contact2-section__privacy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 324px;
+}
+
+.contact2-section__submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 40px;
+  width: 100%;
+}
+
+.contact2-section__privacy-checkbox-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  position: relative;
+}
+
+.contact2-section__privacy-error {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background-color: $color-white;
+  border: 1px solid rgba(47, 72, 88, 0.2);
+  border-radius: 4px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  &[style*="flex"] {
+    display: flex !important;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid $color-white;
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(47, 72, 88, 0.2);
+    z-index: 0;
+  }
+}
+
+.contact2-section__privacy-error-icon {
+  width: 20px;
+  height: 20px;
+  background-color: $color-orange;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.contact2-section__privacy-error-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: $color-gray;
+}

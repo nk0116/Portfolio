@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- フォントを読み込む -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSSを読み込む -->
+    <link rel="stylesheet" href="../css/qa-title.css" />
+    <link rel="stylesheet" href="../css/qa-item.css" />
+    <link rel="stylesheet" href="../css/qa-section.css" />
+    <!-- JavaScriptを読み込む -->
+    <script src="../qa-item/qa-item.js" defer></script>
+    <title>よくあるご質問セクションコンポーネント</title>
+  </head>
+  <body>
+    <section class="qa-section">
+      <h2 class="qa-title">
+        <span class="qa-title__text">よくあるご質問</span>
+        <div class="qa-title__icon"></div>
+      </h2>
+      <div class="qa-section__items">
+        <div class="qa-item qa-item--closed">
+          <button class="qa-item__question" type="button">
+            <div class="qa-item__q-badge">
+              <span class="qa-item__q-text">Q</span>
+            </div>
+            <div class="qa-item__question-content">
+              <p class="qa-item__question-text">当日の作業は可能ですか？</p>
+              <img src="../../../img/qa-icon-closed.svg" alt="閉じる" class="qa-item__question-icon qa-item__question-icon--closed" />
+              <img src="../../../img/qa-icon.svg" alt="開く" class="qa-item__question-icon qa-item__question-icon--open" />
+            </div>
+          </button>
+          <div class="qa-item__answer">
+            <div class="qa-item__a-badge">
+              <span class="qa-item__a-text">A</span>
+            </div>
+            <p class="qa-item__answer-text">
+              可能です。対応エリアをスタッフが巡回しているため、最短15分でお伺いいたします。お部屋の状況や必要人員、車両によっては翌日以降に改めて日程調整させて頂くこともございますが、まずはお気軽にご相談ください。
+            </p>
+          </div>
+        </div>
+
+        <div class="qa-item qa-item--closed">
+          <button class="qa-item__question" type="button">
+            <div class="qa-item__q-badge">
+              <span class="qa-item__q-text">Q</span>
+            </div>
+            <div class="qa-item__question-content">
+              <p class="qa-item__question-text">現金以外も利用可能ですか？</p>
+              <img src="../../../img/qa-icon-closed.svg" alt="閉じる" class="qa-item__question-icon qa-item__question-icon--closed" />
+              <img src="../../../img/qa-icon.svg" alt="開く" class="qa-item__question-icon qa-item__question-icon--open" />
+            </div>
+          </button>
+          <div class="qa-item__answer">
+            <div class="qa-item__a-badge">
+              <span class="qa-item__a-text">A</span>
+            </div>
+            <p class="qa-item__answer-text">
+              現金以外にも当社ではVISA・Master・JCBなどのクレジットカードに対応していますので、安心してお問い合わせください。分割が可能なクレジットカードであれば、決済後にお客様自身で対応頂ければより安心してご依頼頂けます。
+            </p>
+          </div>
+        </div>
+
+        <div class="qa-item qa-item--closed">
+          <button class="qa-item__question" type="button">
+            <div class="qa-item__q-badge">
+              <span class="qa-item__q-text">Q</span>
+            </div>
+            <div class="qa-item__question-content">
+              <p class="qa-item__question-text">後日請求書払いは可能ですか？</p>
+              <img src="../../../img/qa-icon-closed.svg" alt="閉じる" class="qa-item__question-icon qa-item__question-icon--closed" />
+              <img src="../../../img/qa-icon.svg" alt="開く" class="qa-item__question-icon qa-item__question-icon--open" />
+            </div>
+          </button>
+          <div class="qa-item__answer">
+            <div class="qa-item__a-badge">
+              <span class="qa-item__a-text">A</span>
+            </div>
+            <p class="qa-item__answer-text">
+              基本的には現金かクレジットカードにてお支払いいただきます。ただ、お客様のご事情に合わせて最適な方法をご提案いたしますので、まずは一度ご相談ください。受付時にお申し付けいただければ可能な範囲でご協力いたします。
+            </p>
+          </div>
+        </div>
+
+        <div class="qa-item qa-item--closed">
+          <button class="qa-item__question" type="button">
+            <div class="qa-item__q-badge">
+              <span class="qa-item__q-text">Q</span>
+            </div>
+            <div class="qa-item__question-content">
+              <p class="qa-item__question-text">他社より安くできますか？</p>
+              <img src="../../../img/qa-icon-closed.svg" alt="閉じる" class="qa-item__question-icon qa-item__question-icon--closed" />
+              <img src="../../../img/qa-icon.svg" alt="開く" class="qa-item__question-icon qa-item__question-icon--open" />
+            </div>
+          </button>
+          <div class="qa-item__answer">
+            <div class="qa-item__a-badge">
+              <span class="qa-item__a-text">A</span>
+            </div>
+            <p class="qa-item__answer-text">
+              お安くできるように努力します。お見積り内容をお電話でお伝え頂いた上で、現地のお見積にてギリギリまで費用を抑えたプランをご提案いたします。地域密着でコストを抑えるなど、お客様にお得なサービスを提供できるように企業努力しております。
+            </p>
+          </div>
+        </div>
+
+        <div class="qa-item qa-item--closed">
+          <button class="qa-item__question" type="button">
+            <div class="qa-item__q-badge">
+              <span class="qa-item__q-text">Q</span>
+            </div>
+            <div class="qa-item__question-content">
+              <p class="qa-item__question-text">作業時に何か必要なものはありますか？</p>
+              <img src="../../../img/qa-icon-closed.svg" alt="閉じる" class="qa-item__question-icon qa-item__question-icon--closed" />
+              <img src="../../../img/qa-icon.svg" alt="開く" class="qa-item__question-icon qa-item__question-icon--open" />
+            </div>
+          </button>
+          <div class="qa-item__answer">
+            <div class="qa-item__a-badge">
+              <span class="qa-item__a-text">A</span>
+            </div>
+            <p class="qa-item__answer-text">
+              特にありません。ゴミ回収や片付け作業に関してはすべてスタッフが対応いたします。状況によってはお立会い無しで作業することも可能ですので、ご要望等は遠慮なくお申し付けください。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

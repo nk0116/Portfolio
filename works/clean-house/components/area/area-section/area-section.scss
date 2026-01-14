@@ -1,0 +1,58 @@
+@use "../../../scss/functions/variables" as *;
+@use "../../../scss/functions/mixin" as *;
+@use "../../../scss/functions/reset" as *;
+@use "../../../scss/functions/base" as *;
+
+.area-section {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 32px;
+  padding: 48px 0 64px;
+  background-color: $color-bg-green;
+  position: relative;
+  overflow: hidden;
+}
+
+.area-section__car-image {
+  position: absolute;
+  left: 103.1px;
+  top: -41.52px;
+  width: 354.62px;
+  height: 354.62px;
+  object-fit: contain;
+  z-index: 0;
+  opacity: 1;
+}
+
+.area-section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.area-section__description {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6em;
+  text-align: left;
+  color: $color-white;
+  width: 322px;
+  margin: 0;
+}
+
+.area-title {
+  position: relative;
+  z-index: 1;
+}
+
+.area-accordions {
+  position: relative;
+  z-index: 1;
+}
+

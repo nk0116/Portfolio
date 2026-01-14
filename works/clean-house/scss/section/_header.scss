@@ -1,0 +1,151 @@
+@use "../functions/mixin" as *;
+@use "../functions/variables" as *;
+
+.header {
+  background: $color-gray;
+}
+
+.header__inner {
+  padding: 4px 12px 0;
+}
+
+.header__contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 35.6%;
+}
+
+.header__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.header__contact-texts {
+  display: flex;
+  flex-direction: row;
+  padding: 4px 0;
+}
+.header__contact-text {
+  color: $color-white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 12px;
+  letter-spacing: 0.88px;
+  @include mq(sp-small) {
+    font-size: 8px;
+    line-height: 10px;
+    letter-spacing: 0.64px;
+  }
+  &:nth-child(1) {
+  }
+  &:nth-child(2) {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 13px;
+    @include mq(sp-small) {
+      font-size: 10px;
+    }
+  }
+  &:nth-child(3) {
+  }
+}
+
+.header__contact-tel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.header__contact-tel-icon {
+  width: 17px;
+  height: 17px;
+  transform: rotate(10deg);
+  aspect-ratio: 17/17;
+}
+
+.header__contact-tel-text {
+  color: $color-white;
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.92px;
+  @include mq(sp-small) {
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0.72px;
+  }
+}
+
+.header__achievement {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  background: $color-bg-main;
+  padding: 4px 35px;
+  height: 33px;
+  margin-top: 4px;
+}
+
+.header__achievement-icon-left {
+  width: 8px;
+  height: 17px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+}
+
+.header__achievement-icon-center {
+  width: 17px;
+  height: 20px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+
+.header__achievement-text {
+  color: $color-gray;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding-right: 5px;
+  white-space: nowrap;
+  @include mq(sp-small) {
+    font-size: 12px;
+  }
+}
+
+.header__achievement-number {
+  color: $color-orange;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: -0.44px;
+  margin-right: 4px;
+  margin-bottom: -3px;
+  @include mq(sp-small) {
+    font-size: 18px;
+  }
+}
+
+.header__achievement-icon-right {
+  width: 8px;
+  height: 17px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.header__achievement-note {
+  color: $color-gray;
+  font-family: Montserrat;
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 12px;
+  white-space: nowrap;
+}

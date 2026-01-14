@@ -1,0 +1,14 @@
+// ブレークポイントのマップ
+@use "sass:map";
+$breakpoints: (
+  sp-small: 'screen and (max-width: 360px)',
+  sp: 'screen and (max-width: 425px)',
+  pc: 'screen and (min-width: 426px)'
+);
+
+// メディアクエリ用のmixin（デフォルトはpc）
+@mixin mq($breakpoint: pc) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
