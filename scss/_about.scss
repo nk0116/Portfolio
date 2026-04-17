@@ -1,0 +1,54 @@
+// ============================================
+// About - 自己紹介（写真＋テキスト横並び）
+// ============================================
+@use "variables" as *;
+
+.about {
+  padding: $spacing-section 0;
+}
+
+.about__content {
+  display: flex;
+  align-items: center;
+  gap: $spacing-large;
+  margin-top: $spacing-component;
+
+  @include tablet {
+    flex-direction: column;
+    gap: $spacing-medium;
+  }
+}
+
+.about__image {
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include tablet {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__text-block {
+  flex: 1;
+}
+
+.about__text {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-small;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

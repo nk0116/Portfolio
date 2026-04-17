@@ -1,0 +1,17 @@
+// ============================================
+// Footer - フッター
+// ============================================
+@use "variables" as *;
+
+.footer {
+  padding: $spacing-component 0;
+  text-align: center;
+}
+
+.footer__copyright {
+  font-family: $font-en;
+  font-size: $font-size-caption;
+  font-weight: $font-weight-regular;
+  letter-spacing: $letter-spacing-caption;
+  color: $color-text-caption;
+}

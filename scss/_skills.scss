@@ -1,0 +1,59 @@
+// ============================================
+// Skills - 使える技術
+// ============================================
+@use "variables" as *;
+
+.skills {
+  padding: $spacing-section 0;
+  background-color: $color-bg-section-alt;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-medium;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $spacing-medium;
+  }
+}
+
+.skills__category {
+  padding: $spacing-component $spacing-medium;
+  background-color: $color-bg-primary;
+  border-top: 3px solid $color-text-primary;
+}
+
+.skills__category-title {
+  font-family: $font-en;
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-nav;
+  color: $color-text-primary;
+  margin-bottom: $spacing-medium;
+}
+
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills__item {
+  font-size: 14px;
+  color: $color-text-secondary;
+  padding-left: 16px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $color-text-caption;
+  }
+}

@@ -1,0 +1,116 @@
+// ============================================
+// Works - 制作事例
+// ============================================
+@use "variables" as *;
+
+.works {
+  padding: $spacing-section 0;
+  background-color: $color-bg-section-alt;
+}
+
+.works__intro {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+  max-width: 700px;
+  margin-bottom: $spacing-large;
+}
+
+// ----- カードグリッド -----
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-medium;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.works__card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: $color-bg-hero;
+
+  &:hover .works__card-overlay {
+    opacity: 1;
+  }
+
+  &:hover .works__card-image {
+    transform: scale(1.03);
+  }
+}
+
+.works__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform $transition-slow;
+}
+
+// プレースホルダー画像（実画像がない場合）
+.works__card-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-en;
+  font-size: $font-size-caption;
+  color: $color-text-caption;
+  letter-spacing: $letter-spacing-caption;
+}
+
+// ----- ホバーオーバーレイ -----
+.works__card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba($color-text-primary, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: $spacing-medium;
+  opacity: 0;
+  transition: opacity $transition-base;
+}
+
+.works__card-title {
+  font-family: $font-ja;
+  font-size: 18px;
+  font-weight: $font-weight-regular;
+  color: $color-bg-primary;
+  margin-bottom: 8px;
+}
+
+.works__card-category {
+  font-family: $font-en;
+  font-size: $font-size-caption;
+  letter-spacing: $letter-spacing-caption;
+  color: rgba($color-bg-primary, 0.6);
+  text-transform: uppercase;
+}
+
+// ----- もっと見るリンク -----
+.works__more {
+  margin-top: $spacing-component;
+  text-align: center;
+}
+
+.works__more-link {
+  font-family: $font-en;
+  font-size: $font-size-body;
+  letter-spacing: $letter-spacing-nav;
+  color: $color-text-primary;
+  border-bottom: 1px solid $color-text-primary;
+  padding-bottom: 4px;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

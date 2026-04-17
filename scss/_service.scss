@@ -1,0 +1,65 @@
+// ============================================
+// Service - 提供サービス
+// ============================================
+@use "variables" as *;
+
+.service {
+  padding: $spacing-section 0;
+}
+
+.service__intro {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+  max-width: 700px;
+  margin-bottom: $spacing-large;
+}
+
+// ----- サービスカード -----
+.service__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-medium;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: $spacing-medium;
+  }
+}
+
+.service-card {
+  background-color: $color-bg-primary;
+  border: 1px solid rgba($color-border, 0.4);
+  padding: $spacing-component $spacing-medium;
+  text-align: center;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.service-card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto $spacing-medium;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.service-card__title {
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-small;
+}
+
+.service-card__description {
+  font-size: 14px;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+}

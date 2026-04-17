@@ -1,0 +1,63 @@
+// ============================================
+// Workflow - 制作の流れ
+// ============================================
+@use "variables" as *;
+
+.workflow {
+  padding: $spacing-section 0;
+  background-color: $color-bg-section-alt;
+}
+
+.workflow__intro {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-large;
+}
+
+.workflow__steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-medium;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.workflow__step {
+  text-align: center;
+  padding: $spacing-medium $spacing-small;
+}
+
+.workflow__step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto $spacing-medium;
+  border-radius: 50%;
+  background-color: $color-text-primary;
+  color: $color-bg-primary;
+  font-family: $font-en;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+}
+
+.workflow__step-title {
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: 12px;
+}
+
+.workflow__step-text {
+  font-size: 14px;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+}

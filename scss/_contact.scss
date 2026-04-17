@@ -1,0 +1,96 @@
+// ============================================
+// Contact - お問い合わせフォーム
+// ============================================
+@use "variables" as *;
+
+.contact {
+  padding: $spacing-section 0;
+}
+
+.contact__inner {
+  @include container;
+  max-width: 640px;
+}
+
+.contact__description {
+  font-size: $font-size-body;
+  line-height: $line-height-body;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-large;
+}
+
+// ----- フォーム -----
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-medium;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group__label {
+  font-size: 14px;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group__required {
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  color: $color-required;
+  letter-spacing: 0.05em;
+}
+
+.form-group__input,
+.form-group__textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  background-color: $color-bg-primary;
+  border: 1px solid $color-border;
+  border-radius: 0;
+  transition: border-color $transition-base;
+
+  &:focus {
+    border-color: $color-text-primary;
+  }
+
+  &::placeholder {
+    color: rgba($color-text-caption, 0.7);
+  }
+}
+
+.form-group__textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+// ----- 送信ボタン -----
+.contact__submit {
+  align-self: center;
+  min-width: 240px;
+  padding: 16px 48px;
+  font-family: $font-en;
+  font-size: $font-size-button;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-nav;
+  color: $color-button-text;
+  background-color: $color-button-bg;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color $transition-base;
+  margin-top: $spacing-small;
+
+  &:hover {
+    background-color: $color-button-hover;
+  }
+}
