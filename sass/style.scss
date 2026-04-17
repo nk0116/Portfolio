@@ -229,17 +229,20 @@ body {
     bottom: 26px;
     left: 0;
     width: 100%;
-    min-height: 209px;
-    background-color: rgba(color.$bg-dark, 0.72);
-    padding: 24px 24px 28px;
+    height: 209px;
+    background: url("../img/sp/bg_fv.png") center center no-repeat;
+    background-size: 100% auto;
+    padding: 32px;
 
     @include mq(pc) {
-      bottom: 60px;
+      background: url(../img/bg_fv.png) center center no-repeat;
+      background-size: 100% auto;
+      bottom: 100px;
       left: 0;
       max-width: 627px;
-      min-height: 174px;
-      height: auto;
-      padding: 28px 48px 32px 48px;
+      height: 174px;
+      padding-top: 24px;
+      padding-left: 96px;
     }
 
     @include mq(tb) {
@@ -251,42 +254,13 @@ body {
   .fv__heading {
     .fv__heading-main {
       display: block;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.6;
-      letter-spacing: 0.06em;
-      color: color.$white;
-
-      @include mq(pc) {
-        font-size: 22px;
-      }
+      font-size: 40px;
+      letter-spacing: 0.1em;
     }
     .fv__heading-sub {
-      margin-top: 10px;
+      margin: 12px;
       display: block;
-      font-size: 12px;
-      line-height: 1.7;
-      letter-spacing: 0.06em;
-      color: color.$white;
-
-      @include mq(pc) {
-        font-size: 13px;
-        margin-top: 12px;
-      }
-    }
-  }
-
-  .fv__cta {
-    margin-top: 16px;
-    margin-left: 0;
-    justify-content: center;
-    padding: 10px 20px;
-    width: auto;
-    max-width: 220px;
-
-    @include mq(pc) {
-      margin-top: 18px;
-      margin-left: 0;
+      letter-spacing: 0.1em;
     }
   }
 }
