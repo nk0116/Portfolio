@@ -42,12 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
   burger.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
 
-  // ----- ヘッダースクロール検知（50px超えたら .is-scrolled 付与） -----
-  const SCROLL_THRESHOLD = 50;
+  // ----- ヘッダースクロール検知（FVを抜けて2つ目のセクションに入ったら .is-scrolled 付与） -----
+  const heroSection = document.getElementById("hero");
   let scrollTicking = false;
 
   const updateHeaderScrollState = () => {
-    if (window.scrollY > SCROLL_THRESHOLD) {
+    // FVセクションのbottomを超えたら is-scrolled（hero未取得時は50pxフォールバック）
+    const threshold = heroSection
+      ? heroSection.offsetTop + heroSection.offsetHeight
+      : 50;
+    if (window.scrollY >= threshold) {
       header.classList.add("is-scrolled");
     } else {
       header.classList.remove("is-scrolled");
