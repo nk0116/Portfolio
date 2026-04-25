@@ -42,6 +42,29 @@ document.addEventListener("DOMContentLoaded", () => {
   burger.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
 
+  // ----- ヘッダースクロール検知（50px超えたら .is-scrolled 付与） -----
+  const SCROLL_THRESHOLD = 50;
+  let scrollTicking = false;
+
+  const updateHeaderScrollState = () => {
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      header.classList.add("is-scrolled");
+    } else {
+      header.classList.remove("is-scrolled");
+    }
+    scrollTicking = false;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(updateHeaderScrollState);
+      scrollTicking = true;
+    }
+  });
+
+  // 初期状態も反映
+  updateHeaderScrollState();
+
   // ナビリンククリックでメニューを閉じる
   nav.querySelectorAll(".header__nav-link").forEach((link) => {
     link.addEventListener("click", () => {

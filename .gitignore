@@ -1,3 +1,13 @@
 .DS_Store
 works/.DS_Store
 works/sobolon/.DS_Store
+
+# デプロイスクリプト（SSH情報含むのでGitHubに上げない）
+deploy.sh
+
+# ローカル/エディタ設定
+.claude/
+.vscode/
+
+# スクショ・検証用素材
+screenshots/
