@@ -29,6 +29,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("nav");
   const overlay = document.getElementById("overlay");
 
+  // ----- ヘッダー背景切替（ヒーローの高さを超えたら黒背景に） -----
+  const hero = document.getElementById("hero");
+  if (hero && header) {
+    let heroHeight = hero.offsetHeight;
+    let headerHeight = header.offsetHeight;
+    let ticking = false;
+
+    const updateHeaderState = () => {
+      const threshold = heroHeight - headerHeight;
+      if (window.scrollY >= threshold) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
+      }
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeaderState);
+        ticking = true;
+      }
+    };
+
+    const onResize = () => {
+      heroHeight = hero.offsetHeight;
+      headerHeight = header.offsetHeight;
+      updateHeaderState();
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+
+    // 初期判定（途中からのリロード対応）
+    updateHeaderState();
+  }
+
   const toggleMenu = () => {
     burger.classList.toggle("is-open");
     nav.classList.toggle("is-open");
@@ -41,33 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   burger.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
-
-  // ----- ヘッダースクロール検知（FVを抜けて2つ目のセクションに入ったら .is-scrolled 付与） -----
-  const heroSection = document.getElementById("hero");
-  let scrollTicking = false;
-
-  const updateHeaderScrollState = () => {
-    // FVセクションのbottomを超えたら is-scrolled（hero未取得時は50pxフォールバック）
-    const threshold = heroSection
-      ? heroSection.offsetTop + heroSection.offsetHeight
-      : 50;
-    if (window.scrollY >= threshold) {
-      header.classList.add("is-scrolled");
-    } else {
-      header.classList.remove("is-scrolled");
-    }
-    scrollTicking = false;
-  };
-
-  window.addEventListener("scroll", () => {
-    if (!scrollTicking) {
-      window.requestAnimationFrame(updateHeaderScrollState);
-      scrollTicking = true;
-    }
-  });
-
-  // 初期状態も反映
-  updateHeaderScrollState();
 
   // ナビリンククリックでメニューを閉じる
   nav.querySelectorAll(".header__nav-link").forEach((link) => {

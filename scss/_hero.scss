@@ -22,15 +22,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-
-  // 暗めのオーバーレイ（ヘッダー白文字＆Scrollインジケータの視認性確保）
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    pointer-events: none;
-  }
 }
 
 .hero__bg-image {
@@ -57,56 +48,18 @@
 }
 
 .hero__title {
-  font-family: $font-ja;
-  font-size: clamp(20px, 2.6vw, 28px);
+  font-family: $font-en;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: $font-weight-bold;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
+  line-height: $line-height-heading;
   color: $color-text-primary;
   margin-bottom: $spacing-small;
-
-  @include mobile {
-    font-size: 18px;
-    line-height: 1.6;
-  }
 }
 
 .hero__description {
   font-size: $font-size-body;
   color: $color-text-secondary;
   line-height: $line-height-body;
-  margin-bottom: $spacing-medium;
-}
-
-// ----- CTAボタン -----
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 220px;
-  padding: 14px 36px;
-  font-family: $font-ja;
-  font-size: $font-size-button;
-  font-weight: $font-weight-bold;
-  letter-spacing: $letter-spacing-nav;
-  color: $color-button-text;
-  background-color: $color-button-bg;
-  text-decoration: none;
-  border: 1px solid $color-button-bg;
-  border-radius: 0;
-  transition: background-color $transition-base, color $transition-base, border-color $transition-base;
-
-  &:hover {
-    background-color: $color-bg-primary;
-    color: $color-button-bg;
-    border-color: $color-button-bg;
-  }
-
-  @include mobile {
-    width: 100%;
-    min-width: 0;
-    padding: 14px 24px;
-  }
 }
 
 // ----- スクロール誘導 -----

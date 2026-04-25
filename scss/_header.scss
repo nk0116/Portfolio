@@ -16,11 +16,11 @@
   color: $color-bg-primary;
 
   &.is-scrolled {
-    background-color: rgba(#000, 0.95);
+    background-color: rgba($color-bg-primary, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
-    // スクロール後：黒背景に白文字
-    color: $color-bg-primary;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    // スクロール後：暗いテキストに切り替え
+    color: $color-text-primary;
   }
 
   .container {

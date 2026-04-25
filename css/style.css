@@ -49,6 +49,51 @@ button, input, textarea, select {
   background: none;
 }
 
+:focus-visible {
+  outline: 2px solid #333333;
+  outline-offset: 2px;
+}
+
+.form-group__input:focus-visible,
+.form-group__textarea:focus-visible {
+  outline: none;
+  border-color: #333333;
+  box-shadow: 0 0 0 2px rgba(51, 51, 51, 0.2);
+}
+
+.form-group__input--error {
+  border-color: #E74C3C;
+}
+.form-group__input--error:focus-visible {
+  border-color: #E74C3C;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.form-group__error {
+  font-size: 13px;
+  color: #E74C3C;
+  margin-top: 4px;
+}
+
+.form-errors {
+  background-color: #fdf0ef;
+  border: 1px solid #E74C3C;
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.form-errors__item {
+  font-size: 14px;
+  color: #E74C3C;
+  line-height: 1.8;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.2s;
+}
+.form-errors__item:hover {
+  text-decoration-color: #E74C3C;
+}
+
 .section {
   padding: clamp(100px, 15vw, 180px) 0;
 }
@@ -105,12 +150,26 @@ button, input, textarea, select {
   width: 100%;
   z-index: 100;
   padding: 24px 0;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  background-color: transparent;
   color: #FFFFFF;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+}
+.header.is-scrolled::before {
+  opacity: 0;
 }
 .header.is-scrolled {
   background-color: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
 }
@@ -136,6 +195,11 @@ button, input, textarea, select {
   align-items: center;
   gap: 48px;
 }
+@media (max-width: 960px) {
+  .header__nav {
+    gap: 24px;
+  }
+}
 @media (max-width: 768px) {
   .header__nav {
     position: fixed;
@@ -147,6 +211,7 @@ button, input, textarea, select {
     justify-content: center;
     gap: 32px;
     background-color: #FFFFFF;
+    color: #333333;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
@@ -186,6 +251,18 @@ button, input, textarea, select {
   }
 }
 
+.header__nav-link--external {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.header__nav-link__arrow {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  transform: translateY(-1px);
+}
+
 .header__burger {
   display: none;
   flex-direction: column;
@@ -206,7 +283,10 @@ button, input, textarea, select {
   width: 100%;
   height: 1px;
   background-color: currentColor;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+.header__burger.is-open span {
+  background-color: #333333;
 }
 .header__burger.is-open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
@@ -245,13 +325,13 @@ button, input, textarea, select {
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: 100vh;
+  min-height: calc(100vh - 72px);
   padding: 0 0 80px;
   overflow: hidden;
 }
 @media (max-width: 768px) {
   .hero {
-    min-height: 70vh;
+    min-height: calc(70vh - 64px);
     padding: 0 0 60px;
   }
 }
@@ -260,13 +340,6 @@ button, input, textarea, select {
   position: absolute;
   inset: 0;
   z-index: 0;
-}
-.hero__bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
-  pointer-events: none;
 }
 
 .hero__bg-image {
@@ -296,56 +369,18 @@ button, input, textarea, select {
 }
 
 .hero__title {
-  font-family: "Noto Sans JP", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", sans-serif;
-  font-size: clamp(20px, 2.6vw, 28px);
+  font-family: "Lato", sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
-  line-height: 1.6;
-  letter-spacing: 0.04em;
+  line-height: 1.2;
   color: #333333;
   margin-bottom: 16px;
-}
-@media (max-width: 480px) {
-  .hero__title {
-    font-size: 18px;
-    line-height: 1.6;
-  }
 }
 
 .hero__description {
   font-size: 15px;
   color: #505050;
   line-height: 2;
-  margin-bottom: 32px;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 220px;
-  padding: 14px 36px;
-  font-family: "Noto Sans JP", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #FFFFFF;
-  background-color: #333333;
-  text-decoration: none;
-  border: 1px solid #333333;
-  border-radius: 0;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.hero__cta:hover {
-  background-color: #FFFFFF;
-  color: #333333;
-  border-color: #333333;
-}
-@media (max-width: 480px) {
-  .hero__cta {
-    width: 100%;
-    min-width: 0;
-    padding: 14px 24px;
-  }
 }
 
 .hero__scroll {
@@ -398,6 +433,81 @@ button, input, textarea, select {
     transform-origin: bottom;
   }
 }
+.service__intro {
+  font-size: 15px;
+  line-height: 2;
+  color: #505050;
+  max-width: 700px;
+  margin-bottom: 64px;
+}
+
+.service__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service__card {
+  background-color: #FFFFFF;
+  border-top: 3px solid #333333;
+  padding: 32px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service__card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 1024px) {
+  .service__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .service__card {
+    padding: 24px 16px;
+  }
+}
+@media (max-width: 480px) {
+  .service__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service__card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+.service__card-price {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 16px;
+}
+.service__card-price span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #A5A5A5;
+}
+
+.service__card-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #505050;
+}
+
+.service__note {
+  margin-top: 32px;
+  font-size: 13px;
+  color: #A5A5A5;
+}
+
 .works {
   padding: clamp(100px, 15vw, 180px) 0;
   background-color: #F8F8F8;
@@ -416,7 +526,7 @@ button, input, textarea, select {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .works__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -433,10 +543,13 @@ button, input, textarea, select {
   aspect-ratio: 4/3;
   background-color: #ECEBEB;
 }
-.works__card:hover .works__card-overlay {
+.works__card:hover .works__card-overlay,
+.works__card:focus .works__card-overlay,
+.works__card:focus-within .works__card-overlay {
   opacity: 1;
 }
-.works__card:hover .works__card-image {
+.works__card:hover .works__card-image,
+.works__card:focus .works__card-image {
   transform: scale(1.03);
 }
 
@@ -471,6 +584,12 @@ button, input, textarea, select {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+@media (max-width: 768px) {
+  .works__card-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(51, 51, 51, 0.85) 0%, transparent 60%);
+  }
+}
 
 .works__card-title {
   font-family: "Noto Sans JP", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", sans-serif;
@@ -486,6 +605,21 @@ button, input, textarea, select {
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
+}
+
+.works__card-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 2px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: rgba(231, 76, 60, 0.8);
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+.works__card-badge--self {
+  background-color: rgba(52, 152, 219, 0.8);
 }
 
 .works__more {
@@ -570,7 +704,7 @@ button, input, textarea, select {
   gap: 64px;
   margin-top: 48px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .about__content {
     flex-direction: column;
     gap: 32px;
@@ -616,17 +750,9 @@ button, input, textarea, select {
 }
 
 .contact__inner {
-  max-width: 1000px;
+  max-width: 640px;
   margin: 0 auto;
   padding: 0 24px;
-  max-width: 640px;
-}
-
-.contact__description {
-  font-size: 15px;
-  line-height: 2;
-  color: #505050;
-  margin-bottom: 64px;
 }
 
 .contact__form {
@@ -707,10 +833,44 @@ button, input, textarea, select {
   text-align: center;
 }
 
+.footer__links {
+  margin-bottom: 24px;
+}
+
+.footer__sns-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #A5A5A5;
+  transition: color 0.3s ease;
+}
+.footer__sns-link:hover {
+  opacity: 1;
+  color: #333333;
+}
+.footer__sns-link svg {
+  width: 20px;
+  height: 20px;
+}
+
 .footer__copyright {
   font-family: "Lato", sans-serif;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.1em;
   color: #A5A5A5;
+}
+
+@media (max-width: 480px) {
+  .hero__description br,
+  .service__intro br {
+    display: none;
+  }
+  .contact__submit {
+    width: 100%;
+    min-width: auto;
+    padding: 16px 24px;
+  }
 }
