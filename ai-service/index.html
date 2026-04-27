@@ -32,9 +32,16 @@
     <div class="ai-container ai-header__inner">
       <a href="../" class="ai-header__logo">Nerio's Portfolio</a>
       <nav class="ai-header__nav">
-        <a href="../#service" class="ai-header__nav-link">Web制作</a>
-        <a href="./" class="ai-header__nav-link ai-header__nav-link--current">AI導入</a>
+        <a href="#services" class="ai-header__nav-link">サービス</a>
+        <a href="#pricing" class="ai-header__nav-link">料金</a>
+        <a href="#faq" class="ai-header__nav-link">FAQ</a>
         <a href="../#contact" class="ai-header__nav-link ai-header__nav-link--cta">お問い合わせ</a>
+        <a href="../" class="ai-header__nav-link ai-header__nav-link--external">
+          Web制作
+          <svg class="ai-header__nav-link__arrow" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+            <path d="M3.5 8.5 L8.5 3.5 M8.5 3.5 L8.5 7.5 M8.5 3.5 L4.5 3.5" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </nav>
     </div>
   </header>
@@ -214,6 +221,19 @@
           <h2 class="ai-section-title">選ばれる理由</h2>
         </div>
 
+        <div class="ai-why__profile">
+          <div class="ai-why__profile-photo-wrap">
+            <img src="img/profile-nerio.jpg" alt="ネリオ" class="ai-why__profile-photo">
+          </div>
+          <div class="ai-why__profile-text">
+            <p class="ai-why__profile-name">ネリオ <span>/ Nerio</span></p>
+            <p class="ai-why__profile-role">窓口から運用まで一貫対応</p>
+            <p class="ai-why__profile-desc">
+              岡山在住のフリーランスエンジニア。Web制作とClaude Code実務運用を毎日続けています。窓口・設計・実装・運用まで、すべて一貫対応します。
+            </p>
+          </div>
+        </div>
+
         <ul class="ai-why__list">
           <li class="ai-why__item">
             <p class="ai-why__num">01</p>
@@ -346,7 +366,7 @@
     <!-- ========================================
          Pricing
     ========================================= -->
-    <section class="ai-pricing">
+    <section class="ai-pricing" id="pricing">
       <div class="ai-container">
         <div class="ai-section-header">
           <p class="ai-label">PRICING</p>
@@ -419,7 +439,7 @@
       <div class="ai-container">
         <div class="ai-section-header">
           <p class="ai-label">ABOUT AI USAGE FEES</p>
-          <h2 class="ai-section-title">プラン料金とは別に、<br class="ai-br-sp">Claudeのサブスクリプション費用が発生します。</h2>
+          <h2 class="ai-section-title">プラン料金とは別に、<br>Claudeのサブスクリプション費用が発生します。</h2>
           <p class="ai-section-lead">
             月額定額だから予算が読める。合わなければいつでも解約OKです。
           </p>
@@ -647,7 +667,7 @@
       <div class="ai-container ai-cta__inner">
         <p class="ai-label ai-cta__label">CONTACT</p>
         <h2 class="ai-cta__title">
-          まずは話を聞きたい、<br class="ai-br-sp">
+          まずは話を聞きたい、<br>
           だけでもOKです。
         </h2>
         <p class="ai-cta__lead">
