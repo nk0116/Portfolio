@@ -621,6 +621,9 @@ button, input, textarea, select {
 .works__card-badge--self {
   background-color: rgba(52, 152, 219, 0.8);
 }
+.works__card-badge--sample {
+  background-color: rgba(127, 140, 141, 0.85);
+}
 
 .works__more {
   margin-top: 48px;
